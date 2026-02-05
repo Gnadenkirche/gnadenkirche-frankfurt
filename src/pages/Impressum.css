@@ -1,0 +1,72 @@
+/* ================= SECTION ================= */
+.impressum-section {
+/*  background: linear-gradient(135deg, #0c2340, #1e3a5f);*/
+  background: #131A28;
+  padding: 7rem 2rem 10rem;
+  color: white;
+}
+
+/* ================= CONTENT ================= */
+.impressum-content {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Georgia", serif;
+  line-height: 1.75;
+}
+
+/* ================= HEADING ================= */
+.impressum-heading {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  transform: translateX(-24px);
+}
+
+/* ================= SUBHEADINGS ================= */
+.impressum-content h2 {
+  margin-top: 2.8rem;
+  font-size: 1.45rem;
+  color: #e6d6ff;
+}
+
+/* ================= TEXT ================= */
+.impressum-content p {
+  margin-bottom: 1.15rem;
+  font-size: 1.05rem;
+}
+
+/* ================= LINKS ================= */
+.impressum-content a {
+  color: #e8c0a0;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.impressum-content a:hover {
+  color: #ffffff;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .impressum-section {
+    padding: 6rem 1.5rem 8rem;
+  }
+
+  .impressum-heading {
+    font-size: 2.2rem;
+    transform: translateX(-10px);
+  }
+
+  .impressum-content p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ================= DESKTOP – PUSH TITLE DOWN ================= */
+@media (min-width: 1024px) {
+  .impressum-heading {
+    margin-top: 5rem;   /* 👈 adjust 3.5–5rem if needed */
+  }
+}
+

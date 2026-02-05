@@ -1,0 +1,41 @@
+.scripture-ref {
+  position: relative;
+  cursor: pointer;
+  color: #8b4513;
+  font-weight: 600;
+}
+
+.scripture-tooltip {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 1rem 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.scripture-ref:hover .scripture-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(6px);
+}
+
+.scripture-tooltip strong {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #c46b2d;
+}
+
+.scripture-text {
+  white-space: normal;
+}
+

@@ -1,0 +1,22 @@
+import ScriptureReference from "./ScriptureReference";
+
+export default function ConfessionPoint({ point }) {
+  return (
+    <section>
+      <h3>{point.title}</h3>
+      <p>{point.text}</p>
+
+      {point.references?.length > 0 && (
+        <div className="point-references">
+          {point.references.map((ref, i) => (
+            <span key={ref}>
+              <ScriptureReference reference={ref} />
+              {i < point.references.length - 1 && "; "}
+            </span>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+

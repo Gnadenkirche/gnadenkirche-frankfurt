@@ -1,0 +1,68 @@
+/* EventTicker.css – Only the bottom scrolling events */
+.events-ticker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.78));
+  padding: 16px 0;
+  z-index: 999;
+  border-top: 4px solid #facc15;
+  box-shadow: 0 -15px 40px rgba(0,0,0,0.7);
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker {
+  display: inline-block;
+  animation: scroll-left 100s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-right: 5.5rem;
+  padding: 8px 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+
+.event-icon {
+  color: #facc15;
+  font-size: 1.6rem;
+  margin-right: 14px;
+  text-shadow: 0 0 20px #facc15;
+  font-weight: bold;
+}
+
+.ticker-item strong {
+  color: #facc15;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.events-ticker:hover .ticker {
+  animation-play-state: paused;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ticker-item {
+    font-size: 1.1rem;
+    margin-right: 3rem;
+  }
+  .event-icon { font-size: 1.3rem; }
+  .events-ticker { padding: 12px 0; }
+}

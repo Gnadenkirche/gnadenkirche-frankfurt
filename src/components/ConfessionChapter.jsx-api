@@ -1,0 +1,16 @@
+import ConfessionPoint from "./ConfessionPoint";
+
+export default function ConfessionChapter({ chapter }) {
+  return (
+    <article>
+      <h2>
+        Kapitel {chapter.chapter}: {chapter.title}
+      </h2>
+
+      {chapter.points.map(point => (
+        <ConfessionPoint key={point.id} point={point} />
+      ))}
+    </article>
+  );
+}
+

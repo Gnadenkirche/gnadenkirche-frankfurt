@@ -1,0 +1,301 @@
+/* ===================================================== */
+/* MEDIA BOOKS */
+/* ===================================================== */
+
+.media-books {
+  text-align: center;
+  margin-bottom: 6rem;
+  padding: 0 2rem;
+  color: #eaf1ff;
+  font-family: "Georgia", serif;
+}
+
+.media-books h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* ================= ENGLISH TITLE ALIGNMENT ================= */
+@media (min-width: 1024px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -40px;   /* 🔥 subtle optical alignment */
+  }
+}
+
+.books-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 3.5rem;
+  color: #e5ecff;
+}
+
+/* ===================================================== */
+/* BOOK GRID */
+/* ===================================================== */
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===================================================== */
+/* BOOK CARD */
+/* ===================================================== */
+
+.book-card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.book-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================================================== */
+/* IMAGE */
+/* ===================================================== */
+
+.book-image-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.book-link:hover img {
+  transform: scale(1.05);
+}
+
+/* ===================================================== */
+/* TITLE */
+/* ===================================================== */
+
+.book-title {
+  margin-top: 1.3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e8c0a0;
+  line-height: 1.4;
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+/* Tablets */
+@media (max-width: 1023px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .media-books h2 {
+    font-size: 2.1rem;
+  }
+
+  /* 🔥 Slightly larger book images on mobile */
+  .book-image-wrapper {
+    max-width: 185px;   /* ⬆ increased from 160px */
+    margin: 0 auto;
+  }
+
+  /* 🔥 Slightly larger title */
+  .book-title {
+    font-size: 1.18rem; /* ⬆ subtle increase */
+  }
+}
+
+/* Desktop fine tuning */
+@media (min-width: 1025px) {
+  .book-image-wrapper {
+    max-width: 210px;
+    margin: 0 auto;
+  }
+}
+
+/* =============================================== */
+/* 1024px–1280px: FORCE 3 BOOKS, NORMAL SIZE       */
+/* =============================================== */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+  .books-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .book-image-wrapper {
+    max-width: 220px;   /* 🔑 controls visual size */
+    margin: 0 auto;
+  }
+
+  .book-image-wrapper img {
+    max-height: 380px;
+    object-fit: contain;
+  }
+
+  .book-title {
+    font-size: 1.1rem;
+    line-height: 1.45;
+  }
+}
+
+/* ===================================================== */
+/* Move ONLY English "Books by Peter Schild" slightly LEFT */
+/* German version remains unchanged                      */
+/* Only in 993–1100 px range                             */
+/* ===================================================== */
+@media (min-width: 993px) and (max-width: 1100px), (min-width: 1105px) and (max-width: 1130px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -14px !important;          /* negative value = move LEFT */
+    /* Tuning values – start with -14px */
+    /* left: -8px;    → very subtle left shift */
+    /* left: -10px;   → gentle */
+    /* left: -12px;   → natural correction */
+    /* left: -14px;   → good starting point */
+    /* left: -16px;   → clearly moved left */
+    /* left: -20px;   → stronger if still looks too right */
+  }
+
+  /* Safety – German title not affected */
+  .media-books:not(.media-books-en) h2 {
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -14px !important;          /* negative value = move LEFT */
+    /* Tuning values – start with -14px */
+    /* left: -8px;    → very subtle left shift */
+    /* left: -10px;   → gentle */
+    /* left: -12px;   → natural correction */
+    /* left: -14px;   → good starting point */
+    /* left: -16px;   → clearly moved left */
+    /* left: -20px;   → stronger if still looks too right */
+  }
+
+  /* Safety – German title not affected */
+  .media-books:not(.media-books-en) h2 {
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1400px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -14px !important;          /* negative value = move LEFT */
+    /* Tuning values – start with -14px */
+    /* left: -8px;    → very subtle left shift */
+    /* left: -10px;   → gentle */
+    /* left: -12px;   → natural correction */
+    /* left: -14px;   → good starting point */
+    /* left: -16px;   → clearly moved left */
+    /* left: -20px;   → stronger if still looks too right */
+  }
+
+  /* Safety – German title not affected */
+  .media-books:not(.media-books-en) h2 {
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1499px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -14px !important;          /* negative value = move LEFT */
+    /* Tuning values – start with -14px */
+    /* left: -8px;    → very subtle left shift */
+    /* left: -10px;   → gentle */
+    /* left: -12px;   → natural correction */
+    /* left: -14px;   → good starting point */
+    /* left: -16px;   → clearly moved left */
+    /* left: -20px;   → stronger if still looks too right */
+  }
+
+  /* Safety – German title not affected */
+  .media-books:not(.media-books-en) h2 {
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 1900px) and (max-width: 1999px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -14px !important;          /* negative value = move LEFT */
+    /* Tuning values – start with -14px */
+    /* left: -8px;    → very subtle left shift */
+    /* left: -10px;   → gentle */
+    /* left: -12px;   → natural correction */
+    /* left: -14px;   → good starting point */
+    /* left: -16px;   → clearly moved left */
+    /* left: -20px;   → stronger if still looks too right */
+  }
+
+  /* Safety – German title not affected */
+  .media-books:not(.media-books-en) h2 {
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 2500px) and (max-width: 2699px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -14px !important;          /* negative value = move LEFT */
+    /* Tuning values – start with -14px */
+    /* left: -8px;    → very subtle left shift */
+    /* left: -10px;   → gentle */
+    /* left: -12px;   → natural correction */
+    /* left: -14px;   → good starting point */
+    /* left: -16px;   → clearly moved left */
+    /* left: -20px;   → stronger if still looks too right */
+  }
+
+  /* Safety – German title not affected */
+  .media-books:not(.media-books-en) h2 {
+    left: 0 !important;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1349px) {
+  .media-books-en h2 {
+    position: relative;
+    left: -14px !important;          /* negative value = move LEFT */
+    /* Tuning values – start with -14px */
+    /* left: -8px;    → very subtle left shift */
+    /* left: -10px;   → gentle */
+    /* left: -12px;   → natural correction */
+    /* left: -14px;   → good starting point */
+    /* left: -16px;   → clearly moved left */
+    /* left: -20px;   → stronger if still looks too right */
+  }
+
+  /* Safety – German title not affected */
+  .media-books:not(.media-books-en) h2 {
+    left: 0 !important;
+  }
+}

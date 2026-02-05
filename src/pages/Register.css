@@ -1,0 +1,87 @@
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f1e, #16213e);
+  color: #e0e0e0;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #facc15;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+}
+
+.register-form {
+  background: rgba(255,255,255,0.08);
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 2px solid rgba(250,204,21,0.3);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.register-form input {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1.1rem;
+}
+
+.register-form input::placeholder {
+  color: #aaa;
+}
+
+.gold-btn.large {
+  width: 100%;
+  padding: 1.3rem;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.info {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+/* Success Screen */
+.register-success {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f1e, #16213e);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.qr-code {
+  width: 280px;
+  height: 280px;
+  margin: 2rem auto;
+  border: 10px solid white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.payment-section {
+  background: rgba(250,204,21,0.15);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  border: 2px solid #facc15;
+}

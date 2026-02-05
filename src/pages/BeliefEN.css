@@ -1,0 +1,272 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+  --chapter-indent: 48px;
+}
+
+/* ================= SECTION ================= */
+.belief-grid-section {
+/*  background: linear-gradient(135deg, #0c2340, #1e3a5f);*/
+  background: #131A28;
+  padding: 7rem 2rem 10rem;
+  color: white;
+}
+
+/* ================= HEADING ================= */
+.belief-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Georgia", serif;
+  margin-bottom: 4rem;
+}
+
+/* ================= LIST GRID ================= */
+.chapter-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+/* ================= ROW ================= */
+.chapter-wrapper {
+  position: relative;
+}
+
+/* ================= TEXT ROW ================= */
+.chapter-text-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  font-family: "Georgia", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.chapter-text-row:hover {
+  color: #e8c0a0;
+}
+
+/* ================= ARROW ================= */
+.chapter-arrow {
+  font-size: 1.6rem;
+  color: #e8c0a0;
+  min-width: 1.5rem;
+  transition: transform 0.25s ease;
+}
+
+/* ================= TEXT ================= */
+.chapter-text {
+  flex: 1;
+}
+
+/* ================= POINTS ================= */
+.chapter-points-below {
+  margin-left: 2.8rem;
+  margin-top: 0.4rem;
+  list-style: none;
+
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+
+/*  background: rgba(12, 35, 64, 0.92);*/
+  background: #131A28;
+  border-radius: 10px;
+
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+}
+
+.chapter-points-below.open {
+  padding: 0.8rem 1rem;
+  max-height: 2000px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= POINT ITEM ================= */
+.chapter-points-below li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.chapter-points-below li:last-child {
+  border-bottom: none;
+}
+
+.chapter-points-below li:hover {
+  color: #e8c0a0;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .belief-heading {
+    font-size: 2.4rem;
+    margin-bottom: 4rem;
+    margin-top: 1.5rem; /* push DOWN */
+  }
+
+  .chapter-text-row {
+    font-size: 1.15rem;
+  }
+
+  .chapter-arrow {
+    font-size: 1.3rem;
+  }
+
+  .chapter-points-below {
+    margin-left: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .belief-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .belief-heading {
+    margin-top: 3rem; /* 👌 extra breathing room below header */
+  }
+}
+
+/* ================= CONFESSION / BELIEF HEADING – MOBILE SPACING FIX ================= */
+
+@media (max-width: 1024px) {
+  .belief-heading {
+    margin-top: 2.5rem;   /* 👈 pushes it DOWN slightly */
+  }
+}
+
+/* Desktop: move heading DOWN */
+@media (min-width: 1024px) {
+  .belief-heading {
+    margin-top: 6rem; /* increase to move further down */
+    transform: translateX(-24px); /* adjust: -12px to -40px */
+  }
+
+  .chapter-text-row {
+    padding-left: var(--chapter-indent);
+  }
+
+  .chapter-points-below {
+    margin-left: var(--chapter-indent);
+    width: calc(100% - var(--chapter-indent));
+  }
+}
+
+/* ================= INTRO TEXT ================= */
+
+.belief-intro {
+  max-width: 900px;              /* ⬅️ slightly wider for desktop */
+  margin: 0 auto 5rem;
+  text-align: center;
+  font-family: "Georgia", serif;
+}
+
+.belief-intro-text {
+  font-size: 1.5rem;             /* ⬅️ increased */
+  line-height: 1.8;
+  color: #f1f4ff;
+  margin-bottom: 2.8rem;
+}
+
+/* ================= QUOTE ================= */
+
+.belief-quote {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
+
+  font-size: 1.6rem;             /* ⬅️ stronger emphasis */
+  line-height: 1.7;
+  font-style: italic;
+  color: #131A28;
+
+  padding: 2.4rem 3rem;
+  background: #DADADA;          /* ✅ BOX COLOR */
+
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.belief-dates {
+  display: inline-block;
+  vertical-align: baseline;
+  font-size: 0.95em;
+  line-height: 1;
+
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
+
+  white-space: nowrap;
+}
+
+.belief-quote-author {
+  display: block;
+  margin-top: 1.4rem;
+  font-size: 1.05rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #131A28;
+  text-align: right;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .belief-grid-section {
+    padding: 8rem 1.2rem 6rem;   /* ⬅️ spacing from header like Pastors */
+  }
+
+  .belief-intro {
+    margin-bottom: 3.5rem;
+  }
+
+  .belief-intro-text {
+    font-size: 1.2rem;
+    line-height: 1.75;
+  }
+
+  .belief-quote {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 1.8rem 1.6rem;
+    font-size: 1.25rem;
+
+    background: #DADADA;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  }
+}
+
+
+.spurgeon-signature {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.spurgeon-signature img {
+  max-width: 220px;
+  opacity: 0.85;
+  display: block;
+  margin-left: auto;
+}
+
+.belief-intro-text strong {
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
+}

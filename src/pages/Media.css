@@ -1,0 +1,283 @@
+/* ===================================================== */
+/* MEDIA PAGE – FINAL CLEAN VERSION */
+/* ===================================================== */
+
+.media-page {
+  min-height: 100vh;
+  background: #131A28;
+  color: #EAF1FF;
+  font-family: "Georgia", serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.media-hero {
+  max-width: 900px;
+  margin: 8rem auto 2.5rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.media-hero h1 {
+  font-size: 3.6rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+/* TABS (MEDIA ROOT ONLY) */
+.media-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.media-tab {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: #f0e8ff;
+  text-decoration: none;
+  padding-bottom: 8px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.media-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #e8c0a0;
+  transition: width 0.3s ease;
+}
+
+.media-tab:hover,
+.media-tab.active {
+  color: #e8c0a0;
+}
+
+.media-tab:hover::after,
+.media-tab.active::after {
+  width: 100%;
+}
+
+/* MEDIA CONTENT WRAPPER */
+.media-content {
+  width: 100%;
+}
+
+/* ===================================================== */
+/* FIX: REMOVE LARGE GAP FOR VIDEOS (MESSAGES PAGE) */
+/* ===================================================== */
+
+.media-content .messages-hero {
+  margin-top: 2.5rem !important;
+  transform: none !important;
+}
+
+.media-content .messages-page {
+  min-height: auto;
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+  .media-hero {
+    margin-top: 5.5rem;
+  }
+
+  .media-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .media-tabs {
+    gap: 2rem;
+  }
+
+  .media-tab {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .media-hero {
+    margin-top: 5rem;
+  }
+
+  .media-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .media-tabs {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .media-tab {
+    font-size: 1.1rem;
+  }
+}
+
+/* ================= ENGLISH DESKTOP – ALIGN MEDIA (VIDEOS + BOOKS) LEFT ================= */
+/* TRUE desktop only */
+@media (min-width: 1200px) {
+  .media-hero {
+    transform: translate(-20px, 45px);
+  }
+
+  .media-tabs {
+    transform: translateX(-20px);
+  }
+}
+
+/* ENGLISH desktop only */
+@media (min-width: 1200px) {
+  .media-page-en .media-hero {
+    transform: translate(-40px, 45px);
+  }
+
+  .media-page-en .media-tabs {
+    transform: translateX(-50px);
+  }
+}
+
+/* ================= MEDIA HERO – MOBILE & TABLET ================= */
+
+/* 320 × 568, 375 × 667, 390 × 844 */
+@media (max-width: 480px) {
+  .media-hero {
+    padding-top: 4rem; /* ⬅️ slightly more space under logo */
+  }
+}
+
+/* 768 × 1024 */
+@media (max-width: 1024px) and (min-width: 481px) {
+  .media-hero {
+    padding-top: 4rem; /* ⬅️ balanced for tablets */
+  }
+}
+
+/* 1024 × 768 — tablet landscape */
+@media (width: 1024px) and (height: 768px) {
+  .media-hero {
+    transform: none;
+    padding-top: 4.5rem;
+    text-align: center;
+  }
+
+  .media-tabs {
+    transform: none;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1100px) {
+  .media-hero {
+    margin-top: 6rem !important;     /* ← lift up – reduce to lift more */
+  }
+
+  .media-hero h1 {
+    transform: translateX(-16px);    /* ← move left – most balanced start */
+  }
+
+  .media-tabs {
+    transform: translateX(-16px);    /* optional – match title */
+  }
+}
+
+/* Reduce hero title font size only in narrow tablet/desktop range (993–1100 px) */
+@media (min-width: 993px) and (max-width: 1100px), (min-width: 1105px) and (max-width: 1130px) {
+  .media-hero h1 {
+    font-size: 3rem !important;     /* ← main value – adjust as needed */
+    /* Suggested options – choose one: */
+    /* 3.2rem → very subtle reduction */
+    /* 3.1rem → gentle */
+    /* 3.0rem → good balanced smaller size (recommended start) */
+    /* 2.9rem → noticeably smaller */
+    /* 2.8rem → quite compact */
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+  .media-hero {
+    margin-top: 10rem !important;     /* ← lift up – reduce to lift more */
+  }
+
+  .media-hero h1 {
+    transform: translateX(-16px);    /* ← move left – most balanced start */
+  }
+
+  .media-tabs {
+    transform: translateX(-16px);    /* optional – match title */
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1200px), (min-width: 1300px) and (max-width: 1400px) {
+  .media-hero h1 {
+    font-size: 3rem !important;     /* ← main value – adjust as needed */
+    /* Suggested options – choose one: */
+    /* 3.2rem → very subtle reduction */
+    /* 3.1rem → gentle */
+    /* 3.0rem → good balanced smaller size (recommended start) */
+    /* 2.9rem → noticeably smaller */
+    /* 2.8rem → quite compact */
+  }
+}
+
+
+
+@media (min-width: 1250px) and (max-width: 1349px) {
+  .media-hero h1 {
+    font-size: 3rem !important;     /* ← main value – adjust as needed */
+    /* Suggested options – choose one: */
+    /* 3.2rem → very subtle reduction */
+    /* 3.1rem → gentle */
+    /* 3.0rem → good balanced smaller size (recommended start) */
+    /* 2.9rem → noticeably smaller */
+    /* 2.8rem → quite compact */
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1499px) {
+  .media-hero h1 {
+    font-size: 3rem !important;     /* ← main value – adjust as needed */
+    /* Suggested options – choose one: */
+    /* 3.2rem → very subtle reduction */
+    /* 3.1rem → gentle */
+    /* 3.0rem → good balanced smaller size (recommended start) */
+    /* 2.9rem → noticeably smaller */
+    /* 2.8rem → quite compact */
+  }
+}
+
+@media (min-width: 1900px) and (max-width: 1999px) {
+  .media-hero h1 {
+    font-size: 3rem !important;     /* ← main value – adjust as needed */
+    /* Suggested options – choose one: */
+    /* 3.2rem → very subtle reduction */
+    /* 3.1rem → gentle */
+    /* 3.0rem → good balanced smaller size (recommended start) */
+    /* 2.9rem → noticeably smaller */
+    /* 2.8rem → quite compact */
+  }
+}
+
+@media (min-width: 2500px) and (max-width: 2699px) {
+  .media-hero h1 {
+    font-size: 3rem !important;     /* ← main value – adjust as needed */
+    /* Suggested options – choose one: */
+    /* 3.2rem → very subtle reduction */
+    /* 3.1rem → gentle */
+    /* 3.0rem → good balanced smaller size (recommended start) */
+    /* 2.9rem → noticeably smaller */
+    /* 2.8rem → quite compact */
+  }
+}

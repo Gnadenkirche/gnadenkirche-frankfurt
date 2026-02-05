@@ -1,0 +1,31 @@
+import { normalizeReference } from "./normalizeReference";
+
+const API_KEY = import.meta.env.VITE_BIBLE_API_KEY;
+
+// ✅ REAL Elberfelder ID (example – confirm yours)
+export const BIBLE_ID = "f421fe261da7624f-01";
+
+export async function fetchScripture(reference) {
+  const passageId = normalizeReference(reference);
+
+  console.log("Bible API request:", BIBLE_ID, passageId);
+
+  const res = await fetch(
+    `https://api.scripture.api.bible/v1/bibles/${BIBLE_ID}/passages/${passageId}?content-type=text&include-notes=false&include-titles=false`,
+    {
+      headers: {
+        "api-key": API_KEY
+      }
+    }
+  );
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error("Bible API error:", res.status, text);
+    throw new Error("Bible API error");
+  }
+
+  const data = await res.json();
+  return data?.data?.content || "Text nicht verfügbar";
+}
+

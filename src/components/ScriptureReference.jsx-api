@@ -1,0 +1,39 @@
+import { useEffect, useState, useRef } from "react";
+import { fetchScripture } from "../bible/bibleApi";
+import "./ScriptureReference.css";
+
+export default function ScriptureReference({ reference }) {
+  const [text, setText] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const cache = useRef({});
+
+  useEffect(() => {
+    if (!reference || cache.current[reference]) return;
+
+    setLoading(true);
+
+    fetchScripture(reference)
+      .then((content) => {
+        cache.current[reference] = content;
+        setText(content);
+      })
+      .catch(() => {
+        setText("Fehler beim Laden der Bibelstelle");
+      })
+      .finally(() => setLoading(false));
+  }, [reference]);
+
+  return (
+    <span className="scripture-ref">
+      {reference}
+
+      <span className="scripture-tooltip">
+        <strong>{reference} (ELB)</strong>
+        <div className="scripture-text">
+          {loading ? "Lade Bibeltext…" : text}
+        </div>
+      </span>
+    </span>
+  );
+}
+

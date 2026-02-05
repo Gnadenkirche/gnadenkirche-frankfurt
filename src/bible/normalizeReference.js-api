@@ -1,0 +1,75 @@
+const BOOK_MAP = {
+  "1Mo": "GEN",
+  "2Mo": "EXO",
+  "3Mo": "LEV",
+  "4Mo": "NUM",
+  "5Mo": "DEU",
+
+  "Jos": "JOS",
+  "Ri": "JDG",
+  "Rut": "RUT",
+
+  "Ps": "PSA",
+  "Spr": "PRO",
+  "Jes": "ISA",
+  "Jer": "JER",
+  "Hes": "EZK",
+
+  "Mt": "MAT",
+  "Mk": "MRK",
+  "Lk": "LUK",
+  "Joh": "JHN",
+  "Apg": "ACT",
+
+  "Röm": "ROM",
+  "1Kor": "1CO",
+  "2Kor": "2CO",
+  "Gal": "GAL",
+  "Eph": "EPH",
+  "Phil": "PHP",
+  "Kol": "COL",
+  "1Thess": "1TH",
+  "2Thess": "2TH",
+
+  "1Tim": "1TI",
+  "2Tim": "2TI",
+  "Tit": "TIT",
+  "Hebr": "HEB",
+  "Jak": "JAS",
+  "1Petr": "1PE",
+  "2Petr": "2PE",
+  "1Joh": "1JN",
+  "2Joh": "2JN",
+  "3Joh": "3JN",
+  "Jud": "JUD",
+  "Offb": "REV"
+};
+
+export function normalizeReference(ref) {
+  let r = ref.trim();
+
+  // 1️⃣ Replace German book names
+  Object.entries(BOOK_MAP).forEach(([de, api]) => {
+    r = r.replace(new RegExp(`^${de}\\s*`), `${api}.`);
+  });
+
+  // 2️⃣ Replace chapter/verse separator
+  r = r.replace(",", ".");
+
+  // 3️⃣ Convert multi-verse dot notation → range
+  // Example: 24.27.44 → 24.27-44
+  const match = r.match(/^([A-Z0-9]+)\.(\d+)\.(\d+)\.(\d+)$/);
+  if (match) {
+    const [, book, chapter, start, end] = match;
+    r = `${book}.${chapter}.${start}-${end}`;
+  }
+
+  // 4️⃣ Normalize dashes
+  r = r.replace("–", "-");
+
+  // 5️⃣ Remove spaces
+  r = r.replace(/\s+/g, "");
+
+  return r;
+}
+

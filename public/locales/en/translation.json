@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Home",
+    "belief": "Belief",
+    "about": "About Us",
+    "sermons": "Sermons",
+    "donate": "Donate",
+    "contact": "Contact"
+  },
+
+  "partners": {
+    "title": "OUR PARTNERS"
+  },
+
+  "related": {
+    "title": "AFFILIATED CHURCHES"
+  },
+
+  "footer": {
+    "impressum": "Legal Notice"
+  },
+
+  {
+  "confession": {
+    "prev": "Previous",
+    "next": "Next",
+    "overview": "Chapter Overview"
+    }
+  }
+}
+
