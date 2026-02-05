@@ -11,7 +11,6 @@ import heroMobileVideo from "../assets/videos/hero-mobile.mp4";
 import church1 from "../assets/images/church1.jpg";
 import church2 from "../assets/images/church2.jpg";
 import church3 from "../assets/images/church3.jpg";
-import church4 from "../assets/images/church4.jpg";
 // Add more imports if you have more images (church4.jpg, etc.)
 
 function Home() {
@@ -156,10 +155,6 @@ function Home() {
           {/* Slide 3 */}
           <div className="slide fade">
             <img src={church3} alt="Unsere Gemeinde – Innenansicht" />
-          </div>
-	  {/* Slide 4 */}
-          <div className="slide fade">
-            <img src={church4} alt="Unsere Gemeinde – Außenansicht" />
           </div>
           {/* Add more slides here if you import more images */}
 

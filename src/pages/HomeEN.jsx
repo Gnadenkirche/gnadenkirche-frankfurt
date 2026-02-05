@@ -8,7 +8,6 @@ import heroMobileVideo from "../assets/videos/hero-mobile.mp4";
 import church1 from "../assets/images/church1.jpg";
 import church2 from "../assets/images/church2.jpg";
 import church3 from "../assets/images/church3.jpg";
-import church4 from "../assets/images/church4.jpg";
 
 function HomeEN() {
 
@@ -143,10 +142,6 @@ function HomeEN() {
           {/* Slide 3 */}
           <div className="slide fade">
             <img src={church3} alt="Our Church – Interior View" />
-          </div>
-          {/* Slide 4 */}
-          <div className="slide fade">
-            <img src={church4} alt="Our Church – Exterior View" />
           </div>
           {/* Scripture Overlay – Uncomment when ready */}
           {/*

@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      VITE_YT_API_KEY: ${{ secrets.VITE_YT_API_KEY }}  # inject secret into build
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
