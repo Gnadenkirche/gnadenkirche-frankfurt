@@ -24,7 +24,7 @@ export default function ImpressumEN() {
         </p>
 
         <p>
-          <strong>VAT Identification Number:</strong> DE414197489
+          <strong>VAT Identification Number:</strong> DE
         </p>
 
         <p>
