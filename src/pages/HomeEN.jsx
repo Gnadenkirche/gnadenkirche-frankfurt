@@ -6,7 +6,7 @@ import heroImage from "../assets/images/hero-message.jpg";
 import heroMobileVideo from "../assets/videos/hero-mobile.mp4";
 // Church slideshow images
 import church1 from "../assets/images/church1.jpg";
-import church2 from "../assets/images/church2.jpg";
+// import church2 from "../assets/images/church2.jpg";
 import church3 from "../assets/images/church3.jpg";
 import church4 from "../assets/images/church4.jpg";
 import church5 from "../assets/images/church5.jpg";
@@ -137,10 +137,6 @@ function HomeEN() {
           {/* Slide 1 */}
           <div className="slide fade">
             <img src={church1} alt="Our Church – Worship Service" />
-          </div>
-          {/* Slide 2 */}
-          <div className="slide fade">
-            <img src={church2} alt="Our Church – Fellowship" />
           </div>
           {/* Slide 3 */}
           <div className="slide fade">
