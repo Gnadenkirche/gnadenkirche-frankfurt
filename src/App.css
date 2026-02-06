@@ -1049,3 +1049,21 @@ section + section,
 }
 
 
+/* ========================================= */
+/* TABLET FIX: LOGO DIVIDER ALIGNMENT        */
+/* 769px – 1024px                            */
+/* ========================================= */
+
+@media (min-width: 769px) and (max-width: 1023px) {
+
+  .logo-divider {
+    padding-top: 0.3rem;     /*   reduce top space */
+    padding-bottom: 0.4rem;  /*   reduce bottom space */
+  }
+
+  .logo-divider-image {
+    transform: translateX(0);     /* keep centered */
+    margin-top: -0.4rem;          /*   pull logo UP slightly */
+    margin-bottom: 0;
+  }
+}
