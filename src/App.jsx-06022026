@@ -23,22 +23,18 @@ function App() {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mediaOpen, setMediaOpen] = useState(false);
-  const [mobileMediaOpen, setMobileMediaOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
   }, [mobileOpen]);
 
+  // ✅ CLOSE MEDIA DROPDOWN ON ANY NAVIGATION
   useEffect(() => {
     setMediaOpen(false);
-    setMobileMediaOpen(false);
   }, [location.pathname]);
 
-  const closeMobile = () => {
-    setMobileOpen(false);
-    setMobileMediaOpen(false);
-  };
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <>
@@ -51,9 +47,15 @@ function App() {
 
           {/* LEFT MENU */}
           <nav className="menu-left desktop-nav">
-            <NavLink to="/" end className="menu-item">{t("nav.home")}</NavLink>
-            <NavLink to="/glaube" className="menu-item">{t("nav.belief")}</NavLink>
-            <NavLink to="/uber-uns" className="menu-item">{t("nav.about")}</NavLink>
+            <NavLink to="/" end className="menu-item">
+              {t("nav.home")}
+            </NavLink>
+            <NavLink to="/glaube" className="menu-item">
+              {t("nav.belief")}
+            </NavLink>
+            <NavLink to="/uber-uns" className="menu-item">
+              {t("nav.about")}
+            </NavLink>
           </nav>
 
           {/* LOGO */}
@@ -68,7 +70,7 @@ function App() {
           {/* RIGHT MENU */}
           <nav className="menu-right desktop-nav">
 
-            {/* MEDIA (DESKTOP – UNCHANGED) */}
+            {/* ===== MEDIA (UNCHANGED) ===== */}
             <div className="menu-item media-dropdown">
               <span
                 className="media-label"
@@ -87,15 +89,21 @@ function App() {
                   <NavLink to="/media/videos" className="dropdown-link">
                     {t("media.videos")}
                   </NavLink>
+
                   <NavLink to="/media/books" className="dropdown-link">
                     {t("media.books")}
                   </NavLink>
                 </div>
               )}
             </div>
+            {/* ===== END MEDIA ===== */}
 
-            <NavLink to="/spenden" className="menu-item">{t("nav.donate")}</NavLink>
-            <NavLink to="/kontakt" className="menu-item">{t("nav.contact")}</NavLink>
+            <NavLink to="/spenden" className="menu-item">
+              {t("nav.donate")}
+            </NavLink>
+            <NavLink to="/kontakt" className="menu-item">
+              {t("nav.contact")}
+            </NavLink>
           </nav>
 
           {/* HAMBURGER */}
@@ -119,27 +127,10 @@ function App() {
         <NavLink to="/glaube" onClick={closeMobile}>{t("nav.belief")}</NavLink>
         <NavLink to="/uber-uns" onClick={closeMobile}>{t("nav.about")}</NavLink>
 
-        {/* ✅ MOBILE MEDIA DROPDOWN (ADDED, NOTHING REMOVED) */}
         <div className="mobile-media">
-          <button
-            className="mobile-media-title"
-            onClick={() => setMobileMediaOpen(o => !o)}
-            aria-expanded={mobileMediaOpen}
-          >
-            {t("nav.media")}
-            <span className={`media-arrow ${mobileMediaOpen ? "open" : ""}`}>▾</span>
-          </button>
-
-          {mobileMediaOpen && (
-            <div className="mobile-media-dropdown">
-              <NavLink to="/media/videos" onClick={closeMobile}>
-                {t("media.videos")}
-              </NavLink>
-              <NavLink to="/media/books" onClick={closeMobile}>
-                {t("media.books")}
-              </NavLink>
-            </div>
-          )}
+          <span className="mobile-media-title">{t("nav.media")}</span>
+          <NavLink to="/media/videos" onClick={closeMobile}>{t("media.videos")}</NavLink>
+          <NavLink to="/media/books" onClick={closeMobile}>{t("media.books")}</NavLink>
         </div>
 
         <NavLink to="/spenden" onClick={closeMobile}>{t("nav.donate")}</NavLink>
@@ -166,7 +157,7 @@ function App() {
         </Routes>
       </main>
 
-      {/* ================= RELATED CHURCHES ================= */}
+      {/* ================= RELATED CHURCHES (ADDED) ================= */}
       <section className="related-churches">
         <div className="related-inner">
           <div className="related-heading">
@@ -176,12 +167,39 @@ function App() {
           </div>
 
           <div className="related-list">
-            <a href="https://www.erb-basel.ch/" target="_blank" rel="noreferrer">ERB Basel</a>
-            <a href="https://ebc-waiblingen.de/" target="_blank" rel="noreferrer">EBC Waiblingen</a>
-            <a href="https://rbc-ds.de/" target="_blank" rel="noreferrer">RBC Donaueschingen</a>
-            <a href="https://www.bibelgemeinde-neustadt.com/" target="_blank" rel="noreferrer">Bibelgemeinde Neustadt</a>
-            <a href="https://voh-missionswerk.de/start/gottesdienst/" target="_blank" rel="noreferrer">RBG Reichshof</a>
-            <a href="https://www.erb-wetzlar.de/" target="_blank" rel="noreferrer">ERB Wetzlar</a>
+	     <a href="https://www.erb-basel.ch/" target="_blank" rel="noreferrer">
+              ERB Basel
+            </a>
+	    
+	    <span className="related-separator">·</span>
+
+	    <a href="https://ebc-waiblingen.de/" target="_blank" rel="noreferrer">
+              EBC Waiblingen
+            </a>
+
+	    <span className="related-separator">·</span>
+
+	    <a href="https://rbc-ds.de/" target="_blank" rel="noreferrer">
+              RBC Donaueschingen
+            </a>
+
+            <span className="related-separator">·</span>
+
+	    <a href="https://www.bibelgemeinde-neustadt.com/" target="_blank" rel="noreferrer">
+              Bibelgemeinde Neustadt
+            </a>
+
+            <span className="related-separator">·</span>
+
+	    <a href="https://voh-missionswerk.de/start/gottesdienst/" target="_blank" rel="noreferrer">
+              RBG Reichshof
+            </a>
+
+	    <span className="related-separator">·</span>
+
+            <a href="https://www.erb-wetzlar.de/" target="_blank" rel="noreferrer">
+              ERB Wetzlar
+            </a>
           </div>
         </div>
       </section>

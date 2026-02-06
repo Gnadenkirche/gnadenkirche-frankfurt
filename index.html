@@ -1,18 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <!-- This line fixes mobile view globally on ALL pages -->
+
+    <!-- Responsive / mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
+    <!-- Site title (language-neutral) -->
     <title>Gnadenkirche Frankfurt</title>
-    
-    <!-- Optional but recommended for 2025 -->
-    <meta name="theme-color" content="#000000" />
+
+    <!-- SEO: neutral description for both languages -->
+    <meta
+      name="description"
+      content="Gnadenkirche Frankfurt – reformierte baptistische Gemeinde. Bibeltreue Predigten, Lehre, Medien und Bücher zur Ehre Gottes."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#131A28" />
+
+    <!-- Favicon (place favicon.ico in /public) -->
     <link rel="icon" href="/favicon.ico" />
+
+    <!-- Open Graph (social sharing, language-neutral) -->
+    <meta property="og:title" content="Gnadenkirche Frankfurt" />
+    <meta
+      property="og:description"
+      content="Reformierte Baptistengemeinde in Frankfurt. Bibeltreue Predigten, Medien und Bücher."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gnadenkirche-frankfurt.de/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
+
   <body>
+    <noscript>
+      Diese Website benötigt JavaScript, um korrekt zu funktionieren.
+    </noscript>
+
     <div id="root"></div>
+
+    <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
