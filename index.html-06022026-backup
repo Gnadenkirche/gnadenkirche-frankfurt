@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
 
@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Title -->
-    <title>Gnadenkirche Frankfurt – Reformierte Baptistengemeinde</title>
+    <title>Gnadenkirche Frankfurt</title>
 
     <!-- SEO -->
     <meta
       name="description"
-      content="Gnadenkirche Frankfurt – Reformierte Baptistengemeinde mit bibeltreuer, gnadenzentrierter Verkündigung des Evangeliums von Jesus Christus."
+      content="Gnadenkirche Frankfurt – bibeltreue, gnadenzentrierte Verkündigung des Evangeliums von Jesus Christus."
     />
     <meta name="robots" content="index, follow" />
 
@@ -26,7 +26,7 @@
     <meta property="og:title" content="Gnadenkirche Frankfurt" />
     <meta
       property="og:description"
-      content="Reformierte Baptistengemeinde in Frankfurt mit bibeltreuer und gnadenzentrierter Verkündigung des Evangeliums."
+      content="Bibeltreue Gemeinde in Frankfurt mit gnadenzentrierter Verkündigung."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gnadenkirche-frankfurt.de/" />
