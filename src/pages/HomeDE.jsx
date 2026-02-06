@@ -9,7 +9,7 @@ import heroMobileVideo from "../assets/videos/hero-mobile.mp4";
 
 // Church slideshow images – import them here
 import church1 from "../assets/images/church1.jpg";
-import church2 from "../assets/images/church2.jpg";
+// import church2 from "../assets/images/church2.jpg";
 import church3 from "../assets/images/church3.jpg";
 import church4 from "../assets/images/church4.jpg";
 import church5 from "../assets/images/church5.jpg";
@@ -150,10 +150,6 @@ function Home() {
           {/* Slide 1 */}
           <div className="slide fade">
             <img src={church1} alt="Unsere Gemeinde – Gottesdienst" />
-          </div>
-          {/* Slide 2 */}
-          <div className="slide fade">
-            <img src={church2} alt="Unsere Gemeinde – Gemeinschaft" />
           </div>
           {/* Slide 3 */}
           <div className="slide fade">
