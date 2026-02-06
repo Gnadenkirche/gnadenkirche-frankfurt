@@ -23,7 +23,7 @@ export default function ImpressumDE() {
         </p>
 
         <p>
-          <strong>Umsatzsteuer-ID:</strong> DE414197489
+          <strong>Umsatzsteuer-ID:</strong> DE
         </p>
 
         <p>
