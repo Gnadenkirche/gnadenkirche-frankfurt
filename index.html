@@ -1,32 +1,32 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Responsive / mobile -->
+    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Site title (language-neutral) -->
+    <!-- Title -->
     <title>Gnadenkirche Frankfurt</title>
 
-    <!-- SEO: neutral description for both languages -->
+    <!-- SEO -->
     <meta
       name="description"
-      content="Gnadenkirche Frankfurt – reformierte baptistische Gemeinde. Bibeltreue Predigten, Lehre, Medien und Bücher zur Ehre Gottes."
+      content="Gnadenkirche Frankfurt – bibeltreue, gnadenzentrierte Verkündigung des Evangeliums von Jesus Christus."
     />
     <meta name="robots" content="index, follow" />
 
-    <!-- Theme color -->
+    <!-- Theme -->
     <meta name="theme-color" content="#131A28" />
 
-    <!-- Favicon (place favicon.ico in /public) -->
+    <!-- Favicon (must exist in /public) -->
     <link rel="icon" href="/favicon.ico" />
 
-    <!-- Open Graph (social sharing, language-neutral) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Gnadenkirche Frankfurt" />
     <meta
       property="og:description"
-      content="Reformierte Baptistengemeinde in Frankfurt. Bibeltreue Predigten, Medien und Bücher."
+      content="Bibeltreue Gemeinde in Frankfurt mit gnadenzentrierter Verkündigung."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gnadenkirche-frankfurt.de/" />
@@ -44,6 +44,17 @@
 
     <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- ✅ GitHub Pages BrowserRouter FIX -->
+    <script>
+      (function () {
+        const redirect = sessionStorage.getItem("redirect");
+        if (redirect) {
+          sessionStorage.removeItem("redirect");
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </body>
 </html>
 
