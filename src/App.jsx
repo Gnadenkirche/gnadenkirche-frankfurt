@@ -59,7 +59,7 @@ function App() {
           {/* LOGO */}
           <NavLink to="/" className="logo-center" onClick={closeMobile}>
             <img
-              src="logo/gnadenkirche-logo-white.png"
+              src="/logo/gnadenkirche-logo-white.png"
               alt="Gnadenkirche Frankfurt"
               className="logo-image"
             />
@@ -190,7 +190,7 @@ function App() {
       <section className="logo-divider">
         <NavLink to="/" aria-label="Zur Startseite">
           <img
-            src="logo/gnadenkirche-logo-blue.png"
+            src="/logo/gnadenkirche-logo-blue.png"
             alt="Gnadenkirche Frankfurt"
             className="logo-divider-image"
           />
