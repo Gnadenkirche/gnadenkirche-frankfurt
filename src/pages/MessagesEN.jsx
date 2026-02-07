@@ -44,7 +44,7 @@ export default function MessagesEN() {
   }, [API_KEY, channelId]);
 
   return (
-    <div className="messages-page">
+    <div className="messages-page messages-page-en">
       <div className="messages-hero">
         <h1>Latest Sermons</h1>
       </div>
@@ -73,9 +73,6 @@ export default function MessagesEN() {
           </div>
         ))}
 
-        {videos.length === 0 && (
-          <p className="no-videos">No videos found.</p>
-        )}
       </div>
 
       <div className="subscribe-button">
