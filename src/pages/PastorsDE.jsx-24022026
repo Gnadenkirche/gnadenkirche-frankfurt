@@ -1,36 +1,10 @@
 import React from "react";
-import { Helmet } from "react-helmet-async"; // ✅ ADD THIS
 import "./Pastors.css";
 import seniorPastor from "../assets/pastors/senior-pastor.jpg";
 import deaconHans from "../assets/pastors/deacon-hans.jpg";
 
 export default function PastorsDE() {
   return (
-    <>
-      {/* ✅ SEO SECTION */}
-      <Helmet>
-        <title>Pastor Peter Schild | Gnadenkirche Frankfurt</title>
-        <meta
-          name="description"
-          content="Pastor Peter Schild – Reformierte Baptistengemeinde Gnadenkirche Frankfurt. Gemeindeleitung und Vorstellung."
-        />
-        <meta name="keywords" content="Peter Schild, Pastor Frankfurt, Gnadenkirche Frankfurt, Reformierte Baptistengemeinde" />
-
-        {/* ✅ Structured Data for Google */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Peter Schild",
-            jobTitle: "Pastor",
-            worksFor: {
-              "@type": "Organization",
-              name: "Gnadenkirche Frankfurt",
-              url: "https://gnadenkirche-frankfurt.de"
-            }
-          })}
-        </script>
-      </Helmet>
     <div className="pastors-page">
 
       {/* BACKGROUND ORBS */}
@@ -113,7 +87,6 @@ export default function PastorsDE() {
         </div>
       </section>
     </div>
-    </>
   );
 }
 
