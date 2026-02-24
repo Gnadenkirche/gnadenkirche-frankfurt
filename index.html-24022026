@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>Gnadenkirche Frankfurt – Reformierte Baptistengemeinde</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Gnadenkirche Frankfurt – Reformierte Baptistengemeinde mit bibeltreuer, gnadenzentrierter Verkündigung des Evangeliums von Jesus Christus."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#131A28" />
+
+    <!-- Favicon (must exist in /public) -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gnadenkirche Frankfurt" />
+    <meta
+      property="og:description"
+      content="Reformierte Baptistengemeinde in Frankfurt mit bibeltreuer und gnadenzentrierter Verkündigung des Evangeliums."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gnadenkirche-frankfurt.de/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body>
+    <noscript>
+      Diese Website benötigt JavaScript, um korrekt zu funktionieren.
+    </noscript>
+
+    <div id="root"></div>
+
+    <!-- Vite entry -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- ✅ GitHub Pages BrowserRouter FIX -->
+    <script>
+      (function () {
+        const redirect = sessionStorage.getItem("redirect");
+        if (redirect) {
+          sessionStorage.removeItem("redirect");
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+  </body>
+</html>
+

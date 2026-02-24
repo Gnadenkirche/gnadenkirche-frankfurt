@@ -1,0 +1,846 @@
+/* ================= FONT (GLOBAL, CROSS-PLATFORM FIX) ================= */
+/*@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&display=swap');
+
+.cardo-exclamation {
+  font-family: 'Cardo', serif;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+/* ================= ROOT ================= */
+.home-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HERO ================= */
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 8, 15, 0.2),
+    rgba(15, 10, 30, 0.35)
+  );
+}
+
+.hero-content-centered {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ================= HERO TITLE (BASE = MOBILE) ================= */
+.hero-church-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.2rem;              /* ✅ MOBILE BASE SIZE */
+  line-height: 1.2;
+  font-weight: 700;
+  color: #d2b184;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.hero-church-name .hero-baptist {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+
+/* ================= HERO SLOGAN ================= */
+
+.hero-slogan {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-slogan-main {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* ================= HERO MAIN TITLE ================= */
+.hero-main-title {
+  font-family: 'Cormorant Garamond', serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* GNADENKIRCHE — slightly bigger, tighter spacing */
+.hero-line-primary {
+  font-size: 3.2rem;          /* 🔼 bigger */
+  font-weight: 700;
+  letter-spacing: 0.28em;     /* 🔽 reduced gap */
+  line-height: 1.1;
+}
+
+/* FRANKFURT — slightly smaller, still elegant */
+.hero-line-secondary {
+  margin-top: 0.35rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;     /* 🔽 reduced gap */
+}
+
+/* ================= HERO SECONDARY TITLE ================= */
+.hero-secondary-title {
+  font-family: 
+    "Avenir Next",
+    "Avenir",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+
+  color: #d2b184;
+  text-align: center;
+  margin-top: 0.6rem;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= SCROLL ARROWS (3x FADE) ================= */
+
+.scroll-arrows {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Arrow shape */
+.scroll-arrows span {
+  width: 36px;
+  height: 36px;
+
+  border-right: 4px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.9);
+
+  transform: rotate(45deg);
+  opacity: 0;
+
+  animation: arrow-fade 2.2s infinite;
+}
+
+/* Staggered fade timing */
+.scroll-arrows span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.scroll-arrows span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.scroll-arrows span:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+/* Fade in / fade out ONLY (no movement) */
+@keyframes arrow-fade {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  60%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .scroll-arrows {
+    bottom: 4rem;
+    gap: 6px;
+  }
+
+  .scroll-arrows span {
+    width: 26px;
+    height: 26px;
+    border-width: 3px;
+  }
+}
+
+
+/* ================= VISIT SECTION ================= */
+.hero-visit-box {
+  margin-top: 4rem;
+  max-width: 520px;
+/*  background: #f9f6ef;*/
+  background: #26343a;
+  border: 2px solid #d7a955;
+  border-radius: 18px;
+  padding: 2.4rem;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+}
+
+.hero-visit-title {
+  font-size: 1.4rem;              /* ✅ MOBILE REDUCED */
+}
+
+.hero-visit-time,
+.hero-visit-address {
+  font-size: 0.95rem;
+}
+
+/* ================= WHAT MATTERS ================= */
+.what-matters-section {
+  background: #131A28;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2.2rem;              /* ✅ MOBILE REDUCED */
+  color: white;
+}
+
+/* ================= GRID ================= */
+.what-matters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.matter-block {
+/*  background: white; */
+  background: #DADADA;
+  padding: 2.4rem 1.8rem;
+  border-radius: 2rem;
+  color: #131A28;
+}
+
+.matter-block h3 {
+  font-size: 1.4rem;
+}
+
+.matter-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ================= MOBILE HERO POSITION ================= */
+@media (max-width: 768px) {
+  .hero-content-centered {
+    transform: translateY(-80px);   /* ✅ MOVE HERO NAME UP */
+  }
+}
+
+/* ================= DESKTOP ONLY ================= */
+@media (min-width: 1024px) {
+
+  /* HERO POSITION */
+  .hero-content-centered {
+    transform: translateY(-200px);
+  }
+
+  .hero-video {
+    object-position: center 80%; /* ⬇️ pushes image DOWN */
+  }
+
+  /* HERO TITLE SIZE */
+  .hero-church-name {
+    font-size: 2rem;              /* ✅ DESKTOP REDUCED */
+  }
+
+  /* VISIT TITLE */
+  .hero-visit-title {
+    font-size: 1.8rem;
+  }
+
+  /* WHAT MATTERS TITLE */
+  .main-title {
+    font-size: 3.2rem;
+  }
+
+  /* GRID */
+  .what-matters-grid {
+    grid-template-columns: repeat(2, 420px);
+    gap: 3rem;
+    justify-content: center;
+  }
+}
+
+/* ================= FORCE MOBILE VISIT TITLE SIZE ================= */
+@media (max-width: 768px) {
+  .visit-title {
+    font-size: 2rem !important;   /* ✅ MOBILE FIX (Samsung safe) */
+    line-height: 1.35;
+  }
+}
+
+/* ================= FORCE MOBILE WHAT MATTERS TITLE SIZE ================= */
+@media (max-width: 768px) {
+  .what-matters-section .main-title {
+    font-size: 2rem !important;   /* ✅ reduced */
+    line-height: 1.25;
+  }
+}
+
+/* ================= FORCE DESKTOP HERO TITLE SIZE ================= */
+@media (min-width: 1024px) {
+  .hero-video-section .hero-church-name {
+    font-size: 2.6rem !important;  /* ✅ visibly smaller */
+    line-height: 1.15;
+  }
+
+  .visit-section .visit-content {
+    transform: translateX(-20px);
+  }
+}
+
+
+/* ================= HERO TITLE LINE CONTROL ================= */
+
+/* Force first line break after Christus-zentrierte */
+.hero-church-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container for second/third lines */
+.hero-church-name .hero-line {
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* MOBILE: split reformierte + Baptistengemeinde */
+@media (max-width: 768px) {
+  .hero-church-name .hero-line {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+/* ================= HERO MEDIA (IMAGE + MOBILE VIDEO) ================= */
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Default: show image, hide video */
+.hero-image {
+  display: none;
+}
+
+.hero-video-mobile {
+  display: block;
+}
+
+/* ================= MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+  /* Hide image on mobile */
+  .hero-image {
+    display: none;
+  }
+
+  /* Show video on mobile */
+  .hero-video-mobile {
+    display: block;
+  }
+
+  /* Ensure video stays behind content */
+  .hero-video-mobile {
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    z-index: 1;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-slogan-main {
+    font-size: 1.2rem;
+  }
+  .hero-slogan-sub {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-slogan-main {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-arrows {
+    bottom: 4rem;
+  }
+  .scroll-arrows span {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scroll-arrows {
+    transform: translateX(-80%) !important;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .hero-main-title {
+    font-size: 3rem;
+  }
+
+  .hero-secondary-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* ================= LAPTOPS (13–14 inch) ================= */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .hero-content-centered {
+    transform: translateY(-90px); /* ⬇️ move DOWN a bit */
+  }
+}
+
+/* ================= LARGE DESKTOPS (15–27 inch) ================= */
+@media (min-width: 1440px) {
+  .hero-content-centered {
+    transform: translateY(-200px); /* your original value */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-video {
+    object-fit: cover;
+    object-position: center 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    display: none !important;
+  }
+}
+
+/* ================= MOBILE VIDEO POSITION FIX ================= */
+@media (max-width: 768px) {
+
+  .hero-video-mobile {
+    object-fit: cover !important;
+
+    /* ⬇️ MOVE VIDEO MORE TO THE RIGHT */
+    object-position: 40% center !important;
+  }
+
+}
+
+/* ================= VISIT DIVIDER ================= */
+.visit-divider.simple {
+  width: 120px;
+  height: 2px;
+  margin: 2.2rem auto 2.6rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #d7a955,
+    transparent
+  );
+}
+
+.visit-divider.double {
+  width: 140px;
+  height: 6px;
+  margin: 2.2rem auto 2.6rem;
+  border-top: 1px solid #d7a955;
+  border-bottom: 1px solid #d7a955;
+  opacity: 0.9;
+}
+
+.visit-divider {
+  width: 160px;                 /* length of the line */
+  height: 2px;                  /* thickness */
+  margin: 2.4rem auto 2.6rem;   /* spacing above & below */
+
+  background-color: #d7a955;    /* your gold */
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .visit-divider {
+    width: 120px;
+    margin: 2rem auto 2.2rem;
+  }
+}
+
+
+/* ================= HERO IMAGE POSITION (DESKTOP) ================= */
+@media (min-width: 1024px) {
+  .hero-image {
+    object-fit: cover;
+    object-position: center 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-line-primary {
+    white-space: nowrap;
+    font-size: 2.4rem;
+    letter-spacing: 0.17em;
+    line-height: 1.05;
+  }
+
+  .hero-line-secondary {
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-secondary-title {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-line-primary {
+    letter-spacing: 0.16em;
+    font-size: 1.9rem;
+  }
+}
+
+/* ===== MOBILE HERO – FINAL AUTHORITY ===== */
+@media (max-width: 768px) {
+  .hero-main-title .hero-line-primary {
+    white-space: nowrap;
+    font-size: 2.2rem;     /* 🔥 THIS WILL SHOW */
+    letter-spacing: 0.17em;
+    line-height: 1.05;
+  }
+
+  .hero-main-title .hero-line-secondary {
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-secondary-title {
+    font-size: 1.15rem;
+  }
+}
+
+
+/* ===================================================== */
+/* FIX: SUB-PIXEL WHITE LINE BETWEEN SECTIONS            */
+/* ===================================================== */
+
+/* Force hero to overlap next section by 1px */
+.hero-video-section {
+  margin-bottom: -1px;
+}
+
+/* Ensure next section covers overlap */
+.what-matters-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================== */
+/* HERO → NEXT SECTION SEAM FIX           */
+/* ===================================== */
+
+.hero-video-section {
+  margin-bottom: -1px;   /* 🔑 kills the white line */
+}
+
+/* ========================================= */
+/* SCROLL ARROWS – 1300px to 1400px (FINAL)  */
+/* ========================================= */
+
+@media (min-width: 1300px) and (max-width: 1400px) {
+
+  /* German */
+  .scroll-arrows {
+    left: 48% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* English */
+  .scroll-arrows-en {
+    left: 47% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1499px) {
+
+  /* German */
+  .scroll-arrows {
+    left: 48.5% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* English */
+  .scroll-arrows-en {
+    left: 47% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* ========================================= */
+/* SCROLL ARROWS – 1920 × 1080 (FULL HD)     */
+/* ========================================= */
+
+@media (min-width: 1900px) and (max-width: 1999px) {
+
+  /* German (DE) */
+  .scroll-arrows {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* English (EN) – slightly to the right */
+  .scroll-arrows-en {
+    left: 51.5%;   /* 👈 fine-tune: 51.2–51.8 if needed */
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================= */
+/* SCROLL ARROWS – 2560 × 1440 (QHD / 2K)    */
+/* ========================================= */
+
+@media (min-width: 2500px) and (max-width: 2699px) {
+
+  /* German (DE) */
+  .scroll-arrows {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* English (EN) – slightly more right */
+  .scroll-arrows-en {
+    left: 52%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ========================================= */
+/* SCROLL ARROWS – 1280 × 800 (Laptop)       */
+/* ========================================= */
+
+@media (min-width: 1250px) and (max-width: 1349px) {
+
+  /* German (DE) */
+  .scroll-arrows {
+    left: 49%;
+    transform: translateX(-50%);
+  }
+
+  /* English (EN) – slightly more right */
+  .scroll-arrows-en {
+    left: 50.5%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ===================================================== */
+/* HERO – FIX MISSING FIRST LETTER (320 × 568)           */
+/* ===================================================== */
+
+@media (max-width: 340px) and (max-height: 600px) {
+
+  /* 🚫 NEVER clip hero text */
+  .hero-overlay,
+  .hero-content-centered,
+  .hero-main-title {
+    overflow: visible !important;
+  }
+
+  /* ✅ Protect first & last letters */
+  .hero-line {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    box-sizing: border-box;
+  }
+
+  /* Typography tuned to FIT + SHOW ALL GLYPHS */
+  .hero-line-primary {
+    font-size: 2rem !important;
+    letter-spacing: 0.1em !important;   /* 🔑 reduced */
+    line-height: 1.05;
+  }
+
+  .hero-line-secondary {
+    font-size: 1.7rem !important;
+    letter-spacing: 0.09em !important;
+    margin-top: 0.2rem;
+  }
+}
+
+
+/* ======================================= */
+/* FLOATING ANNOUNCEMENT POPUP (LARGER)   */
+/* ======================================= */
+
+.float-popup {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 25px 65px rgba(0,0,0,0.30);
+  padding: 1.8rem 2.2rem;        /* 🔥 more padding */
+  max-width: 520px;              /* 🔥 bigger width */
+  z-index: 9999;
+  animation: float-popup-slide 0.35s ease;
+}
+
+.float-popup-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;                   /* 🔥 more spacing */
+}
+
+.float-popup-image {
+  background: #d7a955;           /* your gold */
+  color: #ffffff;
+  width: 80px;                   /* 🔥 bigger icon */
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2rem;               /* 🔥 bigger symbol */
+}
+
+.float-popup-heading {
+  font-size: 1.3rem;             /* 🔥 bigger heading */
+  color: #131A28;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.float-popup-message {
+  margin: 0;
+  font-size: 1.05rem;            /* 🔥 bigger text */
+  line-height: 1.6;
+  color: #555;
+}
+
+.float-popup-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.float-popup-close:hover {
+  color: #000;
+}
+
+/* Slide animation */
+@keyframes float-popup-slide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .float-popup {
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    max-width: none;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .float-popup-image {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+  }
+
+  .float-popup-heading {
+    font-size: 1.1rem;
+  }
+
+  .float-popup-message {
+    font-size: 0.95rem;
+  }
+}
