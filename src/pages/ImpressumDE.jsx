@@ -18,7 +18,7 @@ export default function ImpressumDE() {
         </p>
 
         <p>
-          <strong>Vereinsregister:</strong> VR 15879<br />
+          <strong>Vereinsregister:</strong> VR 32734<br />
           <strong>Registergericht:</strong> Amtsgericht Hanau
         </p>
 

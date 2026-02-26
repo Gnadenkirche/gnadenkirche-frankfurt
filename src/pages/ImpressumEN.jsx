@@ -19,7 +19,7 @@ export default function ImpressumEN() {
         </p>
 
         <p>
-          <strong>Register of Associations:</strong> VR 15879<br />
+          <strong>Register of Associations:</strong> VR 32734<br />
           <strong>Register Court:</strong> Hanau District Court
         </p>
 
