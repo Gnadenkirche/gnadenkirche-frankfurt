@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation } from "react-router-dom";
 import "./LanguageDropdown.css";
 
 import deFlag from "../assets/flags/de.png";
@@ -8,41 +7,14 @@ import enFlag from "../assets/flags/en.png";
 
 export default function LanguageDropdown() {
   const { i18n } = useTranslation();
-  const navigate = useNavigate();
-  const location = useLocation();
   const ref = useRef(null);
 
   const isGerman = i18n.language === "de";
 
   const toggleLang = () => {
     const nextLang = isGerman ? "en" : "de";
-
     i18n.changeLanguage(nextLang);
     localStorage.setItem("lang", nextLang);
-
-    const path = location.pathname;
-
-    /* 🔥 STATEMENT PAGE SWITCH */
-    if (path === "/statement" && nextLang === "de") {
-      navigate("/stellungnahme");
-      return;
-    }
-
-    if (path === "/stellungnahme" && nextLang === "en") {
-      navigate("/statement");
-      return;
-    }
-
-    /* 🔥 OPTIONAL: OTHER PAGES IF NEEDED */
-    if (path === "/about" && nextLang === "de") {
-      navigate("/uber-uns");
-      return;
-    }
-
-    if (path === "/uber-uns" && nextLang === "en") {
-      navigate("/about");
-      return;
-    }
   };
 
   return (
@@ -61,3 +33,4 @@ export default function LanguageDropdown() {
     </div>
   );
 }
+

@@ -17,9 +17,6 @@ import Donations from "./pages/Donations";
 import Contact from "./pages/Contact";
 import Impressum from "./pages/Impressum";
 
-import StatementDE from "./pages/StatementDE";
-import StatementEN from "./pages/StatementEN";
-
 import "./App.css";
 
 function App() {
@@ -166,8 +163,6 @@ function App() {
           <Route path="/spenden" element={<Donations />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/impressum" element={<Impressum />} />
-	  <Route path="/stellungnahme" element={<StatementDE />} />
-          <Route path="/statement" element={<StatementEN />} />
         </Routes>
       </main>
 

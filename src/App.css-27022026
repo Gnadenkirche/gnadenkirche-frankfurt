@@ -1,0 +1,1069 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+/* ======================= */
+/* GLOBAL RESET            */
+/* ======================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ======================= */
+/* HEADER (FINAL POLISHED) */
+/* ======================= */
+
+.heartcry-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+
+  /* 🔥 KEY FIX */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+
+/*
+  GRID:
+  [ left menu ] [ logo ] [ right menu ] [ hamburger ]
+*/
+.header-container {
+  max-width: 1700px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto max-content auto max-content;
+  align-items: center;
+
+  /* ⬇️ slightly more breathing space */
+  column-gap: 2.8rem;
+
+  padding: 0 2.5rem;
+}
+
+/* ======================= */
+/* LEFT MENU               */
+/* ======================= */
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-self: end;
+
+  /* ⬇️ subtle space from logo */
+  margin-right: 1.2rem;
+}
+
+/* ======================= */
+/* LOGO (UNCHANGED)        */
+/* ======================= */
+.logo-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 160px;
+  width: auto;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.85));
+}
+
+/* ======================= */
+/* RIGHT MENU              */
+/* ======================= */
+.menu-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-self: start;
+
+  /* ⬇️ subtle space from logo */
+  margin-left: 1.2rem;
+}
+
+/* ======================= */
+/* MENU ITEMS              */
+/* ======================= */
+.menu-item {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  color: #f0e8ff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  position: relative;
+}
+
+/* Improve visibility on bright hero images */
+.menu-item,
+.media-label,
+.mobile-menu-toggle span {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+}
+
+.menu-item:hover,
+.menu-item.active {
+  color: #e8c0a0;
+}
+
+.menu-item::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e8c0a0;
+  transition: width 0.25s ease;
+}
+
+.menu-item:hover::after,
+.menu-item.active::after {
+  width: 100%;
+}
+
+/* ======================= */
+/* HAMBURGER (ALL SCREENS) */
+/* ======================= */
+.mobile-menu-toggle {
+  display: block;
+  justify-self: end;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background: #f0e8ff;
+  border-radius: 999px;
+}
+
+/* ======================= */
+/* MOBILE DRAWER           */
+/* ======================= */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+/*  background: #131A28;*/
+  z-index: 950;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 78%;
+  max-width: 320px;
+/*  background: rgba(6, 6, 12, 0.97);*/
+  background: #131A28;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2.5rem;
+  gap: 1.8rem;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 960;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ======================= */
+/* RESPONSIVE              */
+/* ======================= */
+@media (max-width: 992px) {
+  .menu-left,
+  .menu-right {
+    display: none;
+  }
+
+  .header-container {
+    grid-template-columns: max-content 1fr max-content;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 110px;
+  }
+}
+
+/* ======================= */
+/* UNSERE PARTNER SECTION  */
+/* ======================= */
+
+.partner-heartcry {
+/*  background: #f4f3f1;*/
+  background: #DADADA;
+  padding: 2rem 1.5rem 2.8rem;
+  text-align: center;
+  font-family: "Georgia", serif;
+  color: #2d1b0a;
+}
+
+.partner-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.partner-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.partner-heartcry-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #26343a;
+}
+
+.partner-line {
+  width: 60px;
+  height: 1px;
+  background: #26343a;
+}
+
+.heartcry-logo {
+  max-width: 240px;
+  height: auto;
+}
+
+
+@media (max-width: 600px) {
+  .heartcry-logo {
+    max-width: 200px;
+  }
+}
+
+/* ======================= */
+/* FOOTER                  */
+/* ======================= */
+
+.clean-footer {
+/*  background: #f4f3f1;*/
+  background: #DADADA;
+  padding: 1.6rem 2rem 3rem;
+  text-align: center;
+  font-family: "Georgia", serif;
+  color: #2d1b0a;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.church-name {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #8b4513;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+  justify-content: center;
+}
+
+.footer-nav a {
+  color: #26343a;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .footer-nav {
+    flex-wrap: nowrap;
+    gap: 3rem;
+  }
+
+  .partner-inner {
+    transform: translateX(-2rem); /* 👉 move to the RIGHT */
+  }
+
+}
+
+/* ======================= */
+/* MOBILE HEADER EDGE FIX  */
+/* ======================= */
+
+@media (max-width: 768px) {
+  .header-container {
+    padding-left: 0.25rem;   /* push logo closer to left */
+    padding-right: 0rem;  /* push hamburger closer to right */
+  }
+
+  /* PUSH HAMBURGER MORE TO THE RIGHT */
+  .mobile-menu-toggle {
+    padding: 0.5rem;
+    margin-right: 0;
+  }
+
+  .logo-center {
+    justify-self: start; /* ensure logo sticks to edge */
+  }
+}
+
+
+/* ======================= */
+/* GLOBAL STAR BACKGROUND  */
+/* ======================= */
+
+/*.bg-starry {*/
+/*  background-image: url("/src/assets/bg/fabric-blue.png");*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*  background-color: #0b1a3a; /* fallback */
+/*}*/
+
+/* ======================= */
+/* COPYRIGHT + IMPRESSUM   */
+/* ======================= */
+
+.impressum-link {
+  color: #26343a;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.impressum-link:hover {
+  color: #26343a;
+}
+
+.copyright-sep {
+  margin: 0 0.4rem;
+  opacity: 0.7;
+}
+
+
+/* ======================= */
+/* THEOLOGISCH VERBUNDENE  */
+/* GEMEINDEN SECTION       */
+/* ======================= */
+
+.related-churches {
+/*  background: #f4f3f1;*/
+  background: #DADADA;
+  padding: 2.8rem 1.5rem 1.2rem;
+  text-align: center;
+  font-family: "Georgia", serif;
+  color: #26343a;
+}
+
+.related-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* HEADING */
+.related-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.related-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #26343a;
+}
+
+.related-line {
+  width: 60px;
+  height: 1px;
+  background: #26343a;
+}
+
+/* CHURCH LINKS */
+
+.related-list {
+  display: flex;
+  flex-direction: column;   /* 👈 KEY FIX */
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.15rem;
+}
+
+/* CHURCH LINKS – FORCE BROWN, NO UNDERLINE */
+.related-list a,
+.related-list a:visited,
+.related-list a:hover,
+.related-list a:active,
+.related-list a:focus {
+/*  color: #8b4513;*/
+  color: #26343a;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+/* SEPARATOR DOT */
+.related-separator {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .related-list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .related-separator {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .related-inner {
+    transform: translateX(-24px); /* adjust: -12px to -40px if needed */
+  }
+}
+
+/* ======================= */
+/* FOOTER CHURCH NAME LINK */
+/* ======================= */
+
+.church-name-link {
+  color: #26343a;            /* same brown */
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.church-name-link:hover {
+  text-decoration: none;
+}
+
+/* ======================= */
+/* MEDIA DROPDOWN (DESKTOP) */
+/* ======================= */
+
+.media-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.media-label {
+  color: #f0e8ff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.media-dropdown:hover .media-label {
+  color: #e8c0a0;
+}
+
+.media-dropdown-menu {
+  position: absolute;
+  top: 160%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #131A28; /* ✅ EXACT color you want */
+  padding: 1rem 1.4rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
+.dropdown-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.dropdown-link:hover {
+  color: #e8c0a0;
+}
+
+
+/* ======================= */
+/* MOBILE MEDIA ACCORDION */
+/* ======================= */
+
+.mobile-media {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.mobile-media-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.mobile-media a {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: #e8c0a0;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
+/* ❌ REMOVE underline for MEDIA only */
+.media-dropdown .media-label::after {
+  display: none !important;
+}
+
+/* ❌ REMOVE underline for MEDIA menu item ONLY */
+.menu-item.media-dropdown::after {
+  display: none !important;
+}
+
+/* ======================= */
+/* MEDIA DROPDOWN (DESKTOP) */
+/* ======================= */
+
+.media-dropdown {
+  position: relative;
+}
+
+.media-label {
+  cursor: pointer;
+  color: #f0e8ff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+/* ❌ REMOVE underline ONLY for MEDIA */
+.menu-item.media-dropdown::after {
+  content: none !important;
+}
+
+.media-dropdown-menu {
+  position: absolute;
+  top: 160%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #131A28;
+  padding: 1rem 1.4rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+  z-index: 999;
+}
+
+.dropdown-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.dropdown-link:hover {
+  color: #e8c0a0;
+}
+
+/* ======================= */
+/* MOBILE MENU COLORS */
+/* ======================= */
+
+.mobile-menu {
+  background: #131A28;
+}
+
+.mobile-backdrop {
+  background: rgba(0,0,0,0.45);
+}
+
+/* REMOVE underline for MEDIA only */
+.menu-item.media-dropdown::after {
+  content: none !important;
+}
+
+/* ================= LOGO DIVIDER ================= */
+
+.logo-divider {
+  background: #DADADA;          /* SAME as churches & footer */
+  display: flex;
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1rem;         /* tighter vertical balance */
+}
+
+.logo-divider-image {
+  width: 160px;                 /* visually balanced with footer title */
+  height: auto;
+  pointer-events: auto;   /* 👈 force clicks */
+  cursor: pointer;
+  display: block;
+
+  /* 🎯 PERFECT TYPOGRAPHIC ALIGNMENT */
+  transform: translateX(-18px);
+
+  /* footer text color */
+  filter: brightness(0) saturate(100%)
+          invert(19%) sepia(12%)
+          saturate(640%)
+          hue-rotate(167deg)
+          brightness(88%)
+          contrast(92%);
+
+  opacity: 0.95;
+}
+
+/* ================= LOGO DIVIDER FIX ================= */
+
+.logo-divider {
+  position: relative;
+  z-index: 50;              /* ⬅️ higher than surrounding sections */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #DADADA;
+}
+
+.logo-divider a {
+  display: inline-block;
+  pointer-events: auto;     /* ⬅️ force link to receive clicks */
+}
+
+.logo-divider-image {
+  pointer-events: auto;
+  cursor: pointer;
+  margin-bottom: -0.3rem;  /* 👈 pulls text closer */
+  transform: translateX(-20px); /* 👈 moves LEFT on desktop + mobile */
+}
+
+/* ================= LOGO DIVIDER – MOBILE ALIGNMENT FIX ================= */
+@media (max-width: 768px) {
+  .logo-divider-image {
+    transform: translateX(-4px); /* 🔹 move slightly RIGHT on mobile */
+  }
+}
+
+/* ======================= */
+/* MOBILE MENU CLOSE (GLOBAL FIX) */
+/* ======================= */
+
+.mobile-close {
+  position: absolute;
+  top: 3.2rem;        /* ⬇️ move down for BOTH desktop & mobile */
+  right: 1.6rem;
+  z-index: 1200;      /* ⬆️ ensure above language button */
+}
+
+
+/* ======================= */
+/* FOOTER CHURCH NAME – CLEAN CLASSIC */
+/* ======================= */
+
+.church-name,
+.church-name-link {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: normal;   /* ❌ no extra spacing */
+  text-transform: uppercase;
+  text-align: center;
+  color: #131A28;           /* ✅ exact color you want */
+  line-height: 1.15;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: -0.6rem;   /* 👈 pulls text closer to logo */
+  line-height: 1.05;     /* 👈 removes extra vertical font space */
+}
+
+.church-name-link:hover {
+  text-decoration: none;
+}
+
+/* ================= FOOTER MEDIA DROPDOWN – REAL FIX ================= */
+
+/* allow dropdown to escape footer */
+.clean-footer,
+.footer-inner {
+  overflow: visible !important;
+}
+
+/* footer media wrapper */
+.footer-media {
+  position: relative;
+}
+
+/* default hidden */
+.footer-media .media-dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+
+  position: absolute;
+  bottom: 140%;                /* ⬆️ opens upward (footer-safe) */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+
+  background: #DADADA;         /* footer background */
+  color: #131A28;
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+}
+
+/* hover = stay open */
+.footer-media:hover .media-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ======================================= */
+/* GLOBAL SECTION SEAM FIX (ANTI WHITE LINE) */
+/* ======================================= */
+
+/* Any section stacked vertically */
+section,
+.partner-heartcry,
+.related-churches,
+.clean-footer,
+.logo-divider {
+  position: relative;
+}
+
+/* Pull next section up by 1px */
+section + section,
+.partner-heartcry + .logo-divider,
+.logo-divider + .clean-footer,
+.related-churches + .logo-divider,
+.logo-divider + .related-churches {
+  margin-top: -1px;
+}
+
+/* ======================= */
+/* FOOTER – COPYRIGHT COLOR FIX */
+/* ======================= */
+
+.clean-footer .copyright {
+  color: #131A28;
+}
+
+.clean-footer .copyright a,
+.clean-footer .copyright a:visited,
+.clean-footer .copyright a:hover,
+.clean-footer .copyright a:active,
+.clean-footer .copyright a:focus {
+  color: #131A28 !important;
+  text-decoration: none !important;
+  font-weight: 400;
+}
+
+
+/* ======================= */
+/* TABLET (1024px) – HAMBURGER NUDGE RIGHT */
+/* ======================= */
+
+@media (max-width: 1100px) and (min-width: 1000px) {
+  .mobile-menu-toggle {
+    margin-right: 0.8rem;   /* 👈 adjust: 0.5rem – 1.2rem */
+  }
+}
+
+/* ======================================= */
+/* GITHUB PAGES + TABLET SCROLLBAR FIX     */
+/* ======================================= */
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .header-container {
+    padding-right: 3rem;   /* 👈 prevents hamburger clipping */
+  }
+
+  .mobile-menu-toggle {
+    margin-right: 0.5rem;  /* 👈 tiny nudge left */
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1100px), (min-width: 1105px) and (max-width: 1130px) {
+
+  /* ────────────────────────────────────────────────
+     Your current logo position – keep unchanged
+  ───────────────────────────────────────────────── */
+  .logo-center {
+    position: absolute;
+    left: 47.5%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+ /* .menu-left {
+    margin-right: 0.8rem !important;*/    /* smaller value = left menu moves RIGHT toward logo */
+    /* Try values: 0.6rem – 1.2rem */
+    /* Do NOT touch margin-left on .menu-right or .header-container padding */
+ /* }*/
+ 
+  .header-container {
+    display: flex;
+    justify-content: flex-start;           /* ← important: start from left */
+    align-items: center;
+    gap: 1.5rem;                           /* or your preferred gap between left/logo/right */
+    padding-top: 18px;
+    margin-top: 12px;
+  }
+
+  /* Anchor left + logo together so they don't move */
+  .menu-left + .logo-center {
+    margin-left: auto;                     /* ← pushes everything after it (right menu) away */
+  }
+
+  /* Explicitly push right menu to the far right */
+  .menu-right {
+    margin-left: auto !important;          /* strongest anchor to right edge */
+    padding-left: 3rem;                  /* ← main control: increase = more space from logo */
+    /* Try values: 2rem → 3.5rem depending on how far right you want it */
+  }
+
+  /* Hamburger follows .menu-right automatically */
+  .mobile-menu-toggle {
+    /* optional: if you want it even more to the right */
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1100px), (min-width: 1105px) and (max-width: 1130px) {
+  .logo-center {
+    top: 54%;           /* was ~48–50% → higher % = moved DOWN */
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+
+  /* Only touch the left menu – nothing else */
+  .menu-left {
+    margin-right: 3rem !important;    /* smaller value = left menu moves RIGHT toward logo */
+  }
+
+}
+
+/* ========================================= */
+/* EN ONLY – Tablet Landscape Gap Fix       */
+/* 1024×768 and 1115×824                     */
+/* ========================================= */
+
+@media (min-width: 1000px) and (max-width: 1150px) {
+
+  html[lang="en"] .menu-left {
+    margin-right: 0.4rem; /* 👈 move LEFT menu closer to logo */
+  }
+
+}
+
+
+/* ======================= */
+/* MOBILE MENU – FONT SIZE UNIFICATION */
+/* ======================= */
+
+.mobile-menu a,
+.mobile-media a,
+.mobile-media-title {
+  font-size: 1.2rem;       /* ✅ same as other menu items */
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+
+/* ===================================================== */
+/* MOBILE MENU – MEDIA DROPDOWN (FINAL FIX)              */
+/* ===================================================== */
+
+/* Media button = SAME as other mobile menu items */
+.mobile-media-title {
+  all: unset;                         /* 🔑 reset button defaults */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  cursor: pointer;
+
+  font-size: 1.2rem;                  /* SAME as other items */
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #ffffff;                     /* SAME color */
+  padding: 0;                         /* remove white box */
+}
+
+/* Arrow */
+.media-arrow {
+  font-size: 0.9rem;                  /* NOT oversized */
+  margin-left: 0.4rem;
+  transition: transform 0.25s ease;
+}
+
+/* Rotate arrow when open */
+.media-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown container */
+.mobile-media-dropdown {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.6rem;
+  gap: 0.6rem;
+}
+
+/* Dropdown links */
+.mobile-media-dropdown a {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color: #e8c0a0;                     /* same accent as desktop */
+  text-decoration: none;
+
+  padding-left: 1.2rem;               /* subtle indent */
+}
+
+/* Hover */
+.mobile-media-dropdown a:hover {
+  color: #ffffff;
+}
+
+/* ================= MOBILE MEDIA TITLE – FIX LAYOUT ================= */
+
+.mobile-media-title {
+  display: inline-flex;        /* 🔑 inline, not full row */
+  align-items: center;
+  justify-content: flex-start; /* 🔑 keep arrow near text */
+  gap: 0.25rem;                /* small controlled spacing */
+  width: auto;                 /* ❌ remove full-width behavior */
+}
+
+.media-arrow {
+  font-size: 0.75rem;
+  line-height: 1;
+  margin: 0;                   /* ❌ remove auto spacing */
+  padding: 0;
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.media-arrow.open {
+  transform: rotate(180deg);
+}
+
+
+/* ========================================= */
+/* TABLET FIX: LOGO DIVIDER ALIGNMENT        */
+/* 769px – 1024px                            */
+/* ========================================= */
+
+@media (min-width: 769px) and (max-width: 1023px) {
+
+  .logo-divider {
+    padding-top: 0.3rem;     /*   reduce top space */
+    padding-bottom: 0.4rem;  /*   reduce bottom space */
+  }
+
+  .logo-divider-image {
+    transform: translateX(0);     /* keep centered */
+    margin-top: -0.4rem;          /*   pull logo UP slightly */
+    margin-bottom: 0;
+  }
+}

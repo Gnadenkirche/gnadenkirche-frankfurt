@@ -1,7 +1,5 @@
-// import React, { useEffect } from "react";
-// import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./HomeEN.css"; // You can use the same CSS as HomeDE or create a separate one if needed
 /*import "./Home.css";*/ // You can use the same CSS as HomeDE or create a separate one if needed
 import heroImage from "../assets/images/hero-message.jpg";
@@ -16,9 +14,6 @@ import church6 from "../assets/images/church6.jpg";
 
 function HomeEN() {
 
-  // ================= POPUP STATE =================
-  const [showPopup, setShowPopup] = useState(true);
-  const navigate = useNavigate();
 
    /* ================= SCROLL TO BOTTOM ================= */
   const scrollToNextSection = () => {
@@ -49,37 +44,6 @@ function HomeEN() {
 
   return (
     <div className="home-page">
-      {showPopup && (
-        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
-          <div
-            className="popup-box"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="popup-close"
-              onClick={() => setShowPopup(false)}
-            >
-              ×
-            </button>
-
-            <h3>Official Statement</h3>
-
-            <p>
-              Read our official statement regarding the current matter.
-            </p>
-
-            <button
-              className="popup-button"
-              onClick={() => {
-                setShowPopup(false);
-                navigate("/statement");
-              }}
-            >
-              Read Statement
-            </button>
-          </div>
-        </div>
-      )}
       {/* ================= HERO ================= */}
       <section className="hero-video-section">
         <img

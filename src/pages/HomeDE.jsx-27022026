@@ -1,7 +1,5 @@
-// import React, { useEffect } from "react";  // ← Added useEffect
-// import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";  // ← Added useEffect
+import { Link } from "react-router-dom";
 import "./HomeDE.css";
 /*import "./Home.css";*/
 
@@ -19,11 +17,6 @@ import church6 from "../assets/images/church6.jpg";
 // Add more imports if you have more images (church4.jpg, etc.)
 
 function Home() {
-  
-  // ================= POPUP STATE =================
-//  const [showPopup, setShowPopup] = useState(true); // set to false to disable
-  const [showPopup, setShowPopup] = useState(true);
-  const navigate = useNavigate();
 
   /* ================= SCROLL TO NEXT SECTION ================= */
   const scrollToNextSection = () => {
@@ -62,38 +55,6 @@ function Home() {
 
   return (
     <div className="home-page">
-      {/* ================= SMALL ANNOUNCEMENT BADGE ================= */}
-      {showPopup && (
-        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
-          <div
-            className="popup-box"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="popup-close"
-              onClick={() => setShowPopup(false)}
-            >
-              ×
-            </button>
-
-            <h3>Wichtige Stellungnahme</h3>
-
-            <p>
-              Lesen Sie unsere offizielle Stellungnahme zum aktuellen Thema.
-            </p>
-
-            <button
-              className="popup-button"
-              onClick={() => {
-                setShowPopup(false);
-                navigate("/stellungnahme");
-              }}
-            >
-              Zur Stellungnahme
-            </button>
-          </div>
-        </div>
-      )}
       {/* ================= HERO ================= */}
       <section className="hero-video-section">
         <img
