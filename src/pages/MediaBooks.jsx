@@ -64,16 +64,6 @@ export default function MediaBooks() {
       title: "Die wahre Bedeutung der Heiligen Drei Könige",
       image: wahreDreiKoenige,
       link: "https://lichtzeichen-shop.com/buecher/evangelistische-literatur/35626/die-wahre-bedeutung-der-heiligen-drei-koenige"
-    },
-    {
-      title: "Das Schlachtfeld der Gedankenwelt",
-      image: schlachtfeldGedankenwelt,
-      link: "https://prorege.de/produkt/das-schlachtfeld-der-gedankenwelt/"
-    },
-    {
-      title: "Die Waffenrüstung Gottes",
-      image: waffenruestungGottes,
-      link: "https://prorege.de/produkt/die-waffenruestung-gottes/"
     }
   ];
 
