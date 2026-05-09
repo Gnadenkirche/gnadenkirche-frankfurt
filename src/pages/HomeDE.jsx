@@ -17,8 +17,6 @@ import church4 from "../assets/images/church4.jpg";
 import church5 from "../assets/images/church5.jpg";
 import church6 from "../assets/images/church6.jpg";
 // Add more imports if you have more images (church4.jpg, etc.)
-// voh
-import predigerSeminar from "../assets/images/predigerseminar.jpg";
 
 function Home() {
   
@@ -222,20 +220,6 @@ function Home() {
           </div>
 	  */}
         </div>
-      </section>
-      {/* ================= PREDIGERSEMINAR SECTION ================= */}
-      <section className="predigerseminar-section">
-        <a
-          href="https://voh-missionswerk.de/predigerseminar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="predigerseminar-link"
-        >
-          <div
-            className="predigerseminar-bg"
-            style={{ backgroundImage: `url(${predigerSeminar})` }}
-          />
-        </a>
       </section>
     </div>
   );
