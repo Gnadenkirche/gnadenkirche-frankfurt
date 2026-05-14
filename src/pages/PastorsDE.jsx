@@ -71,7 +71,27 @@ export default function PastorsDE() {
         <div className="container">
           <h2 className="pastors-heading">Gemeindeleitung</h2>
 
-          {/* ================= PASTOR ================= */}
+	  {/* ================= PASTOR ================= */}
+          <div className="pastor-card">
+            <div className="pastor-photo jakob-photo">
+              <img src={pastorJakob} alt="Pastor Jakob Klassen" />
+              <div className="glow"></div>
+            </div>
+
+            <div className="pastor-content">
+              <span className="label">Pastor</span>
+              <h1>Jakob Klassen</h1>
+              <p className="bio">
+                Jakob Klassen ist verheiratet und Vater von zwei Kindern. Aufgewachsen
+                in einer christlichen Familie in der Sowjetunion, erlebte er
+                Christenverfolgung und fand später zum rettenden Glauben. Beruflich
+                ist er Außenhandelskaufmann und in der Servicesicherung eines
+                Logistikunternehmens tätig. Seit 2026 dient er als Pastor der Gemeinde.
+              </p>
+            </div>
+          </div>
+
+	  {/* ================= PASTOR ================= */}
           <div className="pastor-card">
             <div className="pastor-photo">
               <img src={seniorPastor} alt="Pastor Peter Schild" />
@@ -88,26 +108,6 @@ export default function PastorsDE() {
                 Missionar nach Frankfurt ausgesandt, um eine reformierte
                 Baptistengemeinde zu gründen. Neben seinem Dienst als Pastor ist
                 er Autor mehrerer Bücher.
-              </p>
-            </div>
-          </div>
-
-	  {/* ================= PASTOR ================= */}
-          <div className="pastor-card">
-            <div className="pastor-photo">
-              <img src={pastorJakob} alt="Pastor Jakob Klasse" />
-              <div className="glow"></div>
-            </div>
-
-            <div className="pastor-content">
-              <span className="label">Pastor</span>
-              <h1>Jakob Klasse</h1>
-              <p className="bio">
-                Jakob Klasse ist verheiratet und Vater von zwei Kindern. Aufgewachsen
-                in einer christlichen Familie in der Sowjetunion, erlebte er
-                Christenverfolgung und fand später zum rettenden Glauben. Beruflich
-                ist er Außenhandelskaufmann und in der Servicesicherung eines
-                Logistikunternehmens tätig. Seit 2026 dient er als Pastor der Gemeinde.
               </p>
             </div>
           </div>

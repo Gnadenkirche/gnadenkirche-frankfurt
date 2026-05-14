@@ -702,3 +702,16 @@
     margin-top: -1rem !important;     /* small pull up */
   }
 }
+
+
+/* ================= JAKOB IMAGE ONLY FIX ================= */
+/* Pastor (Jakob Klassen) */
+.jakob-photo img {
+  width: 112%;
+  height: 115%;
+  object-fit: cover;
+  object-position: center 60%;
+
+  position: relative;
+  left: -20px; /* move image left */
+}

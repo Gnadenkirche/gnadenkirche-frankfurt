@@ -72,7 +72,27 @@ export default function PastorsEN() {
         <div className="container">
           <h2 className="pastors-heading">Church Leadership</h2>
 
-          {/* ================= PASTOR ================= */}
+	  {/* ================= PASTOR ================= */}
+          <div className="pastor-card">
+            <div className="pastor-photo jakob-photo">
+              <img src={pastorJakob} alt="Pastor Jakob Klassen" />
+              <div className="glow"></div>
+            </div>
+
+            <div className="pastor-content">
+              <span className="label">Pastor</span>
+              <h1>Jakob Klassen</h1>
+              <p className="bio">
+                Jakob Klassen is married and the father of two children. Having grown up
+                in a Christian family in the Soviet Union, he experienced the persecution
+                of Christians and later came to saving faith. Professionally, he is a
+                foreign trade specialist and works in service assurance for a logistics
+                company. Since 2026, he has served the church as a pastor.
+              </p>
+            </div>
+          </div>
+
+	  {/* ================= PASTOR ================= */}
           <div className="pastor-card">
             <div className="pastor-photo">
               <img src={seniorPastor} alt="Pastor Peter Schild" />
@@ -89,26 +109,6 @@ export default function PastorsEN() {
                 Frankfurt in 2014 to establish a Reformed Baptist church. In
                 addition to his pastoral ministry, he is the author of several
                 books.
-              </p>
-            </div>
-          </div>
-
-	  {/* ================= PASTOR ================= */}
-          <div className="pastor-card">
-            <div className="pastor-photo">
-              <img src={pastorJakob} alt="Pastor Jakob Klasse" />
-              <div className="glow"></div>
-            </div>
-
-            <div className="pastor-content">
-              <span className="label">Pastor</span>
-              <h1>Jakob Klasse</h1>
-              <p className="bio">
-                Jakob Klasse is married and the father of two children. Having grown up
-                in a Christian family in the Soviet Union, he experienced the persecution
-                of Christians and later came to saving faith. Professionally, he is a
-                foreign trade specialist and works in service assurance for a logistics
-                company. Since 2026, he has served the church as a pastor.
               </p>
             </div>
           </div>
