@@ -33,16 +33,8 @@ export default function LanguageDropdown() {
       return;
     }
 
-    /* 🔥 OPTIONAL: OTHER PAGES IF NEEDED */
-    if (path === "/about" && nextLang === "de") {
-      navigate("/uber-uns");
-      return;
-    }
-
-    if (path === "/uber-uns" && nextLang === "en") {
-      navigate("/about");
-      return;
-    }
+    // ✅ Do nothing for /uber-uns
+    // The same URL works for both German and English.
   };
 
   return (
