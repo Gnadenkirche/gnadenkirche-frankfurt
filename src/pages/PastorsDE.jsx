@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async"; // ✅ ADD THIS
 import "./Pastors.css";
 import seniorPastor from "../assets/pastors/senior-pastor.jpg";
+import pastorJakob from "../assets/pastors/pastor-jakob.jpg";
 import deaconHans from "../assets/pastors/deacon-hans.jpg";
 
 export default function PastorsDE() {
@@ -87,6 +88,26 @@ export default function PastorsDE() {
                 Missionar nach Frankfurt ausgesandt, um eine reformierte
                 Baptistengemeinde zu gründen. Neben seinem Dienst als Pastor ist
                 er Autor mehrerer Bücher.
+              </p>
+            </div>
+          </div>
+
+	  {/* ================= PASTOR ================= */}
+          <div className="pastor-card">
+            <div className="pastor-photo">
+              <img src={pastorJakob} alt="Pastor Jakob Klasse" />
+              <div className="glow"></div>
+            </div>
+
+            <div className="pastor-content">
+              <span className="label">Pastor</span>
+              <h1>Jakob Klasse</h1>
+              <p className="bio">
+                Jakob Klasse ist verheiratet und Vater von zwei Kindern. Aufgewachsen
+                in einer christlichen Familie in der Sowjetunion, erlebte er
+                Christenverfolgung und fand später zum rettenden Glauben. Beruflich
+                ist er Außenhandelskaufmann und in der Servicesicherung eines
+                Logistikunternehmens tätig. Seit 2026 dient er als Pastor der Gemeinde.
               </p>
             </div>
           </div>
