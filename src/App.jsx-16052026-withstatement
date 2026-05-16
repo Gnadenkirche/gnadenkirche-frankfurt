@@ -17,6 +17,9 @@ import Donations from "./pages/Donations";
 import Contact from "./pages/Contact";
 import Impressum from "./pages/Impressum";
 
+import StatementDE from "./pages/StatementDE";
+import StatementEN from "./pages/StatementEN";
+
 import "./App.css";
 
 function App() {
@@ -163,6 +166,8 @@ function App() {
           <Route path="/spenden" element={<Donations />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/impressum" element={<Impressum />} />
+	  <Route path="/stellungnahme" element={<StatementDE />} />
+          <Route path="/statement" element={<StatementEN />} />
         </Routes>
       </main>
 
@@ -182,7 +187,6 @@ function App() {
             <a href="https://www.bibelgemeinde-neustadt.com/" target="_blank" rel="noreferrer">Bibelgemeinde Neustadt</a>
             <a href="https://voh-missionswerk.de/start/gottesdienst/" target="_blank" rel="noreferrer">RBG Reichshof</a>
             <a href="https://www.erb-wetzlar.de/" target="_blank" rel="noreferrer">ERB Wetzlar</a>
-            <a href="https://erb-kl.de/" target="_blank" rel="noreferrer">ERB Kaiserslautern</a>
           </div>
         </div>
       </section>

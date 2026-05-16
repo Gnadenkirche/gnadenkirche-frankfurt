@@ -1,26 +1,31 @@
-// import React, { useEffect } from "react";
+// import React, { useEffect } from "react";  // ← Added useEffect
 // import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./HomeEN.css"; // You can use the same CSS as HomeDE or create a separate one if needed
-/*import "./Home.css";*/ // You can use the same CSS as HomeDE or create a separate one if needed
+import "./HomeDE.css";
+/*import "./Home.css";*/
+
+// Static hero IMAGE
 import heroImage from "../assets/images/hero-message.jpg";
 import heroMobileVideo from "../assets/videos/hero-mobile.mp4";
-// Church slideshow images
+
+// Church slideshow images – import them here
 import church1 from "../assets/images/church1.jpg";
 // import church2 from "../assets/images/church2.jpg";
 import church3 from "../assets/images/church3.jpg";
 import church4 from "../assets/images/church4.jpg";
 import church5 from "../assets/images/church5.jpg";
 import church6 from "../assets/images/church6.jpg";
+// Add more imports if you have more images (church4.jpg, etc.)
 
-function HomeEN() {
-
+function Home() {
+  
   // ================= POPUP STATE =================
+//  const [showPopup, setShowPopup] = useState(true); // set to false to disable
   const [showPopup, setShowPopup] = useState(true);
   const navigate = useNavigate();
 
-   /* ================= SCROLL TO BOTTOM ================= */
+  /* ================= SCROLL TO NEXT SECTION ================= */
   const scrollToNextSection = () => {
   document
     .getElementById("home-next-section")
@@ -29,32 +34,72 @@ function HomeEN() {
     });
   };
 
-  // ================= SLIDESHOW LOGIC – SAME AS GERMAN VERSION =================
+  // ================= SLIDESHOW LOGIC – MUST BE INSIDE THE COMPONENT =================
   useEffect(() => {
     const slides = document.querySelectorAll('.slide');
     if (slides.length === 0) return;
+
     let current = 0;
+
     const showSlide = (index) => {
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
       });
     };
+
+    // Show first slide immediately
     showSlide(current);
+
+    // Auto-advance every 6 seconds
     const interval = setInterval(() => {
       current = (current + 1) % slides.length;
       showSlide(current);
     }, 6000);
+
+    // Cleanup on unmount
     return () => clearInterval(interval);
-  }, []);
+  }, []); // Empty dependency array = run once on mount
 
   return (
     <div className="home-page">
+      {/* ================= SMALL ANNOUNCEMENT BADGE ================= */}
+      {showPopup && (
+        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+          <div
+            className="popup-box"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="popup-close"
+              onClick={() => setShowPopup(false)}
+            >
+              ×
+            </button>
+
+            <h3>Wichtige Stellungnahme</h3>
+
+            <p>
+              Lesen Sie unsere offizielle Stellungnahme zum aktuellen Thema.
+            </p>
+
+            <button
+              className="popup-button"
+              onClick={() => {
+                setShowPopup(false);
+                navigate("/stellungnahme");
+              }}
+            >
+              Zur Stellungnahme
+            </button>
+          </div>
+        </div>
+      )}
       {/* ================= HERO ================= */}
       <section className="hero-video-section">
         <img
           className="hero-video hero-image"
           src={heroImage}
-          alt="Christ in the Center – ERB Frankfurt"
+          alt="Christus im Zentrum – ERB Frankfurt"
         />
 	{/* Mobile video */}
         <video
@@ -64,14 +109,15 @@ function HomeEN() {
           loop
           playsInline
         >
-          <source src={heroMobileVideo} type="video/mp4" />
+	  <source src={heroMobileVideo} type="video/mp4" />
         </video>
 
-        {/* ===== SCROLL ARROWS (CLICKABLE) ===== */}
+	
+	{/* ===== SCROLL ARROWS (CLICKABLE) ===== */}
         <button
-          className="scroll-arrows scroll-arrows-en"
+          className="scroll-arrows"
           onClick={scrollToNextSection}
-          aria-label="Scroll down"
+          aria-label="Zum Seitenende scrollen"
         >
           <span></span>
           <span></span>
@@ -79,26 +125,27 @@ function HomeEN() {
         </button>
 
         <div className="hero-overlay">
-          <div className="hero-content-centered hero-content-centered-en">
+          <div className="hero-content-centered">
 	    <h1 className="hero-main-title">
-	      <span className="hero-line hero-line-primary">Grace Church</span>
+	      <span className="hero-line hero-line-primary">Gnadenkirche</span>
 	      <span className="hero-line hero-line-secondary">Frankfurt</span>
             </h1>
 	    <h2 className="hero-secondary-title">
-              Reformed Baptist Church
+              Reformierte Baptistengemeinde
             </h2>
           </div>
         </div>
       </section>
-      
+
+
       {/* ================= VISIT US ================= */}
       <section id="home-next-section" className="visit-section">
         <div className="container visit-content">
-          <h2 className="visit-title">Visit us this Sunday<span className="cardo-exclamation">!</span></h2>
+          <h2 className="visit-title">Besuche uns diesen Sonntag<span className="cardo-exclamation">!</span></h2>
 
           <div className="visit-divider" />
 
-          <p className="visit-time">Church service - 4:30 PM</p>
+          <p className="visit-time">Gottesdienst · 16:30 Uhr</p>
           <p className="visit-address">
             Hohemarkstraße 75<br />
             61440 Oberursel
@@ -106,30 +153,30 @@ function HomeEN() {
         </div>
       </section>
 
-      {/* ================= WHAT MATTERS TO US ================= */}
+      {/* ================= WAS UNS WICHTIG IST ================= */}
       <section className="what-matters-section">
         <div className="container">
           <div className="what-matters-grid">
             <Link to="/uber-uns" className="matter-block hope">
-              <h3>Who We Are</h3>
+              <h3>Wer wir sind</h3>
               <p>
-	        We are a church with Jesus Christ at the center. We believe and confess
-                that He is the Son of God, our Lord and Savior. We desire to live our
-                entire lives by God’s grace and for God’s glory.
+	        Wir sind eine Gemeinde mit Jesus Christus im Zentrum. Wir glauben und
+                bekennen, dass Er der Sohn Gottes, unser Herr und Erlöser ist. Unser
+                ganzes Leben wollen wir aus Gottes Gnade und zu Gottes Ehre führen.
               </p>
               <span className="read-more">
-                Learn more about us
+                Mehr über uns
               </span>
             </Link>
             <Link to="/glaube" className="matter-block doctrine">
-              <h3>What We Believe</h3>
+              <h3>Was wir glauben</h3>
               <p>
-	        We believe that the Bible is God’s infallible Word. Our faith is grounded
-                solely in Holy Scripture and is summarized in the Baptist Confession of
-                Faith of 1689.
+	        Wir glauben, dass die Bibel Gottes unfehlbares Wort ist. Unser Glaube
+                gründet sich allein auf die Heilige Schrift und wird im baptistischen
+                Glaubensbekenntnis von 1689 zusammengefasst.
               </p>
               <span className="read-more">
-                Learn more about our faith
+                Mehr über unseren Glauben
               </span>
             </Link>
           </div>
@@ -141,39 +188,41 @@ function HomeEN() {
         <div className="slideshow-container">
 	  {/* Slide 1 */}
           <div className="slide fade">
-            <img src={church1} alt="Our Church – Interior View" />
+            <img src={church1} alt="Unsere Gemeinde – Innenansicht" />
           </div>
           {/* Slide 3 */}
           <div className="slide fade">
-            <img src={church3} alt="Our Church – Interior View" />
+            <img src={church3} alt="Unsere Gemeinde – Innenansicht" />
           </div>
 	  {/* Slide 4 */}
           <div className="slide fade">
-            <img src={church4} alt="Our Church – Interior" />
+            <img src={church4} alt="Unsere Gemeinde – Kirchenraum" />
           </div>
 	  {/* Slide 5 */}
           <div className="slide fade">
-            <img src={church5} alt="Our Church – View Inside the Church" />
+            <img src={church5} alt="Unsere Gemeinde – Blick in den Kirchenraum" />
           </div>
 	  {/* Slide 6 */}
           <div className="slide fade">
-            <img src={church6} alt="Our Church – Worship Service Inside the Church" />
+            <img src={church6} alt="Unsere Gemeinde – Gottesdienst im Kirchenraum" />
           </div>
-          {/* Scripture Overlay – Uncomment when ready */}
-          {/*
+          {/* Add more slides here if you import more images */}
+
+          {/* Scripture Overlay */}
+	  {/*
           <div className="slideshow-overlay">
             <div className="scripture-box">
               <p className="scripture-text">
-                “For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.”
+                „Denn aus Gnade seid ihr gerettet durch Glauben, und das nicht aus euch: Gottes Gabe ist es.“
               </p>
-              <p className="scripture-reference">— Ephesians 2:8</p>
+              <p className="scripture-reference">— Epheser 2,8</p>
             </div>
           </div>
-          */}
+	  */}
         </div>
       </section>
     </div>
   );
 }
 
-export default HomeEN;
+export default Home;

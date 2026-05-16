@@ -1,0 +1,90 @@
+/* ================= SECTION ================= */
+.statement-section-de {
+  background: #131A28;
+  padding: 8rem 2rem 10rem;
+  color: white;
+}
+
+/* ================= CONTENT ================= */
+.statement-content-de {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Georgia", serif;
+  line-height: 1.85;
+}
+
+/* ================= HEADING ================= */
+.statement-heading-de {
+  text-align: center;           /* 🔥 Only heading centered */
+  font-size: 3.4rem;
+  font-weight: 900;
+  margin-bottom: 3.5rem;
+}
+
+
+/* ================= TEXT ================= */
+.statement-content-de p {
+  font-size: 1.18rem;
+  margin-bottom: 1.6rem;
+  text-align: left;             /* 🔥 Paragraph left aligned */
+}
+
+/* ================= VERSE ================= */
+.statement-verse-de {
+  margin-top: 3rem;
+  font-style: italic;
+  font-size: 1.15rem;
+  text-align: left;             /* 🔥 Verse left aligned */
+  opacity: 0.95;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .statement-section-de {
+    padding: 6rem 1.5rem 8rem;
+  }
+
+  .statement-heading-de {
+    font-size: 2rem;
+  }
+
+  .statement-content-de p {
+    font-size: 1.05rem;
+  }
+}
+
+/* INTRO */
+.statement-content-de p.statement-intro-de {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.7;
+  margin-bottom: 2.4rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .statement-content-de p.statement-intro-de {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .statement-content-de {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .statement-content-de p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  .statement-content-de p.statement-intro-de {
+    font-size: 1.35rem;   /* smaller intro */
+    line-height: 1.6;
+  }
+
+}

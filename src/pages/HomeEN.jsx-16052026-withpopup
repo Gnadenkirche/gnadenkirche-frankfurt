@@ -49,6 +49,37 @@ function HomeEN() {
 
   return (
     <div className="home-page">
+      {showPopup && (
+        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+          <div
+            className="popup-box"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="popup-close"
+              onClick={() => setShowPopup(false)}
+            >
+              ×
+            </button>
+
+            <h3>Official Statement</h3>
+
+            <p>
+              Read our official statement regarding the current matter.
+            </p>
+
+            <button
+              className="popup-button"
+              onClick={() => {
+                setShowPopup(false);
+                navigate("/statement");
+              }}
+            >
+              Read Statement
+            </button>
+          </div>
+        </div>
+      )}
       {/* ================= HERO ================= */}
       <section className="hero-video-section">
         <img

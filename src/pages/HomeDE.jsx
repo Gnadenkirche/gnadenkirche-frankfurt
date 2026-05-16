@@ -62,38 +62,6 @@ function Home() {
 
   return (
     <div className="home-page">
-      {/* ================= SMALL ANNOUNCEMENT BADGE ================= */}
-      {showPopup && (
-        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
-          <div
-            className="popup-box"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="popup-close"
-              onClick={() => setShowPopup(false)}
-            >
-              ×
-            </button>
-
-            <h3>Wichtige Stellungnahme</h3>
-
-            <p>
-              Lesen Sie unsere offizielle Stellungnahme zum aktuellen Thema.
-            </p>
-
-            <button
-              className="popup-button"
-              onClick={() => {
-                setShowPopup(false);
-                navigate("/stellungnahme");
-              }}
-            >
-              Zur Stellungnahme
-            </button>
-          </div>
-        </div>
-      )}
       {/* ================= HERO ================= */}
       <section className="hero-video-section">
         <img
